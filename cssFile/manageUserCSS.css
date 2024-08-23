@@ -1,0 +1,166 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: darkslategray;
+    display: flex;
+    height: 100vh;
+    font-family: georgia;
+ }
+
+
+
+
+#positionInput{
+    background-color: #f0eef0;
+	border: solid 1px #dcdcdc; 
+	border-radius: 3px;
+	box-shadow:  0 0 0 1px rgba(255,255,255,0.8); 
+	box-sizing: border-box;
+	color: #999999;	
+	font-size: 14px;
+	font-weight: 600;
+	height: 50px;
+	line-height: auto;
+	outline: none;
+	padding-left: 20px;
+	width: 100%;
+	box-sizing: border-box;
+	margin-bottom: 5px;
+	transition: border 0.3s linear;
+}
+
+#sportInput, #athleteSportInput, #coachSportInput, #userTypeInput, #reqSportInput, #inactiveUserSportInput, #inactiveUserTypeInput{
+    background-color: #f0eef0;
+	border: solid 1px #dcdcdc; 
+	border-radius: 3px;
+	box-shadow:  0 0 0 1px rgba(255,255,255,0.8); 
+	box-sizing: border-box;
+	color: #999999;	
+	font-size: 14px;
+	font-weight: 600;
+	height: 50px;
+	line-height: auto;
+	outline: none;
+	padding-left: 20px;
+	width: 100%;
+	box-sizing: border-box;
+	margin-bottom: 5px;
+	transition: border 0.3s linear;
+}
+
+#coachSportInput{
+    background-color: #f0eef0;
+	border: solid 1px #dcdcdc; 
+	border-radius: 3px;
+	box-shadow:  0 0 0 1px rgba(255,255,255,0.8); 
+	box-sizing: border-box;
+	color: #999999;	
+	font-size: 14px;
+	font-weight: 600;
+	height: 50px;
+	line-height: auto;
+	outline: none;
+	padding-left: 20px;
+	width: 100%;
+	box-sizing: border-box;
+	margin-bottom: 5px;
+	transition: border 0.3s linear;
+}
+
+.container-coach, .container-athlete {
+    padding: 20px;
+    background-color: rgba(148, 148, 148, 0.6);
+    border-radius: 30px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* This will make the buttons stick to the bottom */
+}
+
+.fixed-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+	padding-top: 20px;
+    margin-top: auto; /* Pushes the buttons to the bottom of the container */
+}
+
+.fixed-buttons button {
+    flex: 1 1 45%; /* Adjusts to take up 45% of the width, change as needed */
+    min-width: 150px; /* Ensures buttons don't get too small */
+    max-width: 100%; /* Prevents buttons from exceeding the container's width */
+    white-space: nowrap; /* Prevents text from wrapping */
+}
+
+#selectedCoaches, #selectedAthletes,  #selectedRequest, #selectedInactive{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px; /* Adjust spacing between items as needed */
+}
+
+
+.selected-coach-item, .selected-athlete-item, .selected-request-item, .selected-inactive-item{
+    background-color: #f0f0f0; /* Light gray background */
+    padding: 5px; /* Optional padding for better appearance */
+    border-radius: 3px; /* Optional rounded corners */
+    margin-bottom: 2px; /* Optional margin for spacing */
+    display: inline-block; /* Ensure items are inline and can have margins */
+}
+
+.remove-coach, .remove-athlete, .remove-request, .remove-inactive {
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: red; /* Color of the "X" button */
+    font-weight: bold; /* Make "X" button text bold */
+}
+
+.filters {
+    text-align: center;
+    align-items: center;
+    margin-left: -20px;
+}
+
+.modal{
+    z-index: 10000;
+}
+
+.table-responsive {
+    font-size: 14px;
+    align-items: center;
+    text-align: center;
+    overflow: auto; /* Enables vertical scrolling */
+    height: 50vh;
+    width: 100%;
+    border-color: black;
+    background-color: rgb(231, 231, 231);
+}
+
+.wider-modal-dialog {
+    max-width: 80%; /* Adjust the width as needed */
+}
+
+#requestSignUpButton {
+    position: relative;
+}
+
+#requestSignUpButton .badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 24px; /* Adjust the width as needed */
+    height: 24px; /* Adjust the height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px; /* Adjust font size as needed */
+}
+
+.btnWidth {
+    width: 20vh;
+}
