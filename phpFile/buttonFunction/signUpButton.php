@@ -1,6 +1,7 @@
 <?php
 header('Content-Type: application/json');
 include "../connection/connection.php";
+include '../verificationFunction/sendVerificationEmail.php';
 
 $response = [];
 
@@ -50,6 +51,23 @@ if (isset($_POST['athNum']) && isset($_POST['athFirst']) && isset($_POST['athLas
     }
     $stmt_check_coach->close();
 
+    
+    // Then, check if the email exists in request_signup_tbl
+    $stmt_check_req = $conn->prepare('SELECT req_email FROM request_signup_tbl WHERE req_email = ?');
+    $stmt_check_req->bind_param("s", $req_email);
+    $stmt_check_req->execute();
+    $stmt_check_req->store_result();
+
+    if ($stmt_check_req->num_rows > 0) {
+        $response['status'] = 'error';
+        $response['message'] = 'Email is already in used';
+        $stmt_check_req->close();
+        echo json_encode($response);
+        exit();
+    }
+    $stmt_check_req->close();
+
+
     // Insert new user into request_signup_tbl
     $stmt_register = $conn->prepare('INSERT INTO request_signup_tbl (req_stu_id, req_fname, req_lname, req_sport, req_position, req_email, req_pass, req_user_type, is_verified, verification_code) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
 
@@ -66,8 +84,14 @@ if (isset($_POST['athNum']) && isset($_POST['athFirst']) && isset($_POST['athLas
     );
 
     if ($stmt_register->execute()) {
-        $response['status'] = 'success';
-        $response['message'] = 'Registration successful. Please check your email for verification.';
+        // Send the OTP via email
+        if (sendVerificationEmail($req_email, $verification_code, $req_user_type)) {
+            $response['status'] = 'success';
+            $response['message'] = 'Registration successful. Please check your email for verification.';
+        } else {
+            $response['status'] = 'error';
+            $response['message'] = 'Registration successful, but failed to send verification email.';
+        }
     } else {
         $response['status'] = 'error';
         $response['message'] = 'Execute statement failed: ' . $stmt_register->error;

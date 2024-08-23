@@ -6,22 +6,42 @@ $message = ''; // Initialize message variable
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $otp = $_POST['otp']; // OTP code entered by user
 
+    // Initialize update statement variable
+    $updateStmt = null;
+
     // Check if the OTP exists in request_signup_tbl
     $stmt = $conn->prepare("SELECT * FROM request_signup_tbl WHERE verification_code = ?");
-    $stmt->bind_param("s", $otp);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows > 0) {
-        // Update request_signup_tbl to mark the email as verified
-        $updateStmt = $conn->prepare("UPDATE request_signup_tbl SET is_verified = 1, verification_code = NULL WHERE verification_code = ?");
-        $updateStmt->bind_param("s", $otp);
-        $updateStmt->execute();
-
-        $message = '<div class="alert alert-success" role="alert">Email verified successfully!</div>';
+    if ($stmt === false) {
+        $message = '<div class="alert alert-danger" role="alert">Prepare statement failed: ' . $conn->error . '</div>';
     } else {
-        $message = '<div class="alert alert-danger" role="alert">Invalid verification code.</div>';
+        $stmt->bind_param("s", $otp);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0) {
+            // Prepare and execute update statement to mark email as verified
+            $updateStmt = $conn->prepare("UPDATE request_signup_tbl SET is_verified = 1, verification_code = NULL WHERE verification_code = ?");
+            if ($updateStmt === false) {
+                $message = '<div class="alert alert-danger" role="alert">Prepare update statement failed: ' . $conn->error . '</div>';
+            } else {
+                $updateStmt->bind_param("s", $otp);
+                $updateStmt->execute();
+
+                $message = '<div class="alert alert-success" role="alert">Email verified successfully!</div>';
+            }
+        } else {
+            $message = '<div class="alert alert-danger" role="alert">Invalid verification code.</div>';
+        }
+
+        $stmt->close();
     }
+
+    // Close the update statement if it was initialized
+    if ($updateStmt !== null) {
+        $updateStmt->close();
+    }
+
+    $conn->close();
 }
 ?>
 

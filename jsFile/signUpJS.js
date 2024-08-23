@@ -133,15 +133,14 @@ $(document).ready(function() {
                 athConPass: $('#athConPass').val().trim()
             };
 
-            // Send data to the appropriate PHP script based on Student Number
-
 
             $.ajax({
                 url: 'phpFile/buttonFunction/signUpButton.php',
                 type: 'POST',
                 data: data,
                 success: function(response) {
-                    alert('Sign up successful');
+                    if (response.status === "success"){
+                    alert(response.message);
                     // Clear the form
                     $('#athNum').val('');
                     $('#athFirst').val('');
@@ -151,6 +150,10 @@ $(document).ready(function() {
                     $('#athEmail').val('');
                     $('#athPass').val('');
                     $('#athConPass').val('');
+                    }
+                    else if (response.status === "error"){
+                        alert('Sign up unsuccessful ' + response.message);
+                    }
                 },
                 error: function(xhr, status, error) {
                     console.error('Error:', error);
