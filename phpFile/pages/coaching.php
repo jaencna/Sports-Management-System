@@ -29,6 +29,7 @@
             background-color: #f3f3f3;
             margin: 0;
             padding: 0;
+            background-color: darkslategray;
             display: flex;
             height: 100vh;
             font-family: georgia;
@@ -61,10 +62,10 @@
             top: 0;
             left: 0;
             /* Ensure it stays at the left edge */
-            background: #FFE3E3;
-            background: -moz-linear-gradient(45deg, #FFE3E3 0%, #B5B5B5 51%, #C0C0C0 100%);
+            background: rgba(18,18,18,255);
+            /* background: -moz-linear-gradient(45deg, #FFE3E3 0%, #B5B5B5 51%, #C0C0C0 100%);
             background: -webkit-linear-gradient(45deg, #FFE3E3 0%, #B5B5B5 51%, #C0C0C0 100%);
-            background: linear-gradient(45deg, #FFE3E3 0%, #B5B5B5 51%, #C0C0C0 100%);
+            background: linear-gradient(45deg, #FFE3E3 0%, #B5B5B5 51%, #C0C0C0 100%); */
             overflow-x: hidden;
             transition: 0.3s;
             padding-top: 60px;
@@ -76,11 +77,12 @@
             padding: 30px 8px 8px 80px;
             /* Adjust padding to make space for icons */
             text-decoration: none;
-            font-size: 25px;
+            font-size: 23px;
             color: #333333;
             display: block;
             transition: 0.3s;
             position: relative;
+            font-family: helvetica;
             width: 50vh;
             /* Ensure icons are positioned correctly */
         }
@@ -103,10 +105,12 @@
             color: rgb(34, 34, 34);
             display: block;
             transition: 0.3s;
+            margin-left:20px;
         }
 
         .sidebar h1 {
             font-size: 35px;
+            color: white;
         }
 
         .sidebar h2 {
@@ -171,6 +175,10 @@
         /* Responsive Table */
         .table-responsive {
             overflow-x: auto;
+        }
+
+        .activa {
+            color:white;
         }
     </style>
 
