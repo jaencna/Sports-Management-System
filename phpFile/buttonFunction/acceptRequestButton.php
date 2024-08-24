@@ -35,13 +35,30 @@ if (isset($_POST['selectedEmails']) && is_array($_POST['selectedEmails'])) {
                     $sampleImg, 
                     $status);
                 $insertStmt->execute();
+
+                // Get the last inserted ID from athlete_tbl
+                $athleteId = $conn->insert_id;
+
+                // Insert into basketball_overall_percentage if the sport is BASKETBALL
+                if ($request['req_sport'] == 'BASKETBALL') {
+                    $insertBasketballQuery = "INSERT INTO basketball_overall_percentage (id, ath_num, ath_3pt, ath_2pt, ath_ft, ath_shooting, ath_passing, ath_ofreb, ath_offense, ath_block, ath_steal, ath_defreb, ath_defense, ath_total)
+                                              VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                    $insertBasketballStmt = $conn->prepare($insertBasketballQuery);
+                    $insertBasketballStmt->bind_param('isssssssssssss', $athleteId, $request['req_stu_id'], $ath_3pt, $ath_2pt, $ath_ft, $ath_shooting, $ath_passing, $ath_ofreb, $ath_offense, $ath_block, $ath_steal, $ath_defreb, $ath_defense, $ath_total);
+                    
+                    // Initialize other columns with appropriate values (e.g., 0 or default values)
+                    $ath_3pt = $ath_2pt = $ath_ft = $ath_shooting = $ath_passing = $ath_ofreb = $ath_offense = $ath_block = $ath_steal = $ath_defreb = $ath_defense = $ath_total = '0';
+                    
+                    $insertBasketballStmt->execute();
+                    $insertBasketballStmt->close();
+                }
+
                 $insertStmt->close();
             } elseif ($request['req_user_type'] == 'COACH') {
                 $insertQuery = "INSERT INTO coach_tbl (coach_fname, coach_lname, coach_email, coach_pass, coach_sport, coach_position, coach_img, STATUS)
                                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
                 $insertStmt = $conn->prepare($insertQuery);
                 $insertStmt->bind_param('ssssssss', 
-                    
                     $request['req_fname'], 
                     $request['req_lname'], 
                     $request['req_email'], 
