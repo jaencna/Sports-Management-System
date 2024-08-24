@@ -24,7 +24,9 @@
 
 </head>
 <body>
+  
     <div class="tabbed-menu">
+      <img class="logo" src="logo.png" > 
       <ul class="tabs">
         <li id="tab1" class="selected">Log In</li>
         <li id="tab2">Sign Up</li>
@@ -43,7 +45,7 @@
 						<button type="button" name="" id="signInButton" class="button-primary" value="Log In">Log In</button>
 					</p> 
 					<p>
-						<span class="login-forget"  title="Send email and get new password">Forgot zpassword?</span>
+						<span class="login-forget"  title="Send email and get new password">Forgot password?</span>
 					</p>
 					<span class="loginForgot">
 						<hr class="line">
@@ -91,16 +93,19 @@
 					<p class="login-username2 input"> 
 						<input type="text" name="athLast" id="athLast"  class="innerInput" maxlength="50" placeholder="Last Name" required> 
 					</p>
-          <p class="login-sport inputs"> 
-            <select id="sportInput" name="athSport">
-                <option value="--">--</option>
-            </select>
-					</p>
-          <p class="login-position inputs"> 
-            <select id="positionInput" name="athPosition">
-                <option value="--">--</option>
-            </select>
-					</p>
+          <div class="container">
+  <p class="login-sport inputs"> 
+    <select id="sportInput" name="athSport">
+      <option value="--">--</option>
+    </select>
+  </p>
+  <p class="login-position inputs"> 
+    <select id="positionInput" name="athPosition">
+      <option value="--">--</option>
+    </select>
+  </p>
+</div>
+
 					<p class="login-email input"> 
 						<input type="E-mail" name="athEmail" id="athEmail" class="innerInput"  maxlength="60" placeholder="E-mail"> 
 					</p>
