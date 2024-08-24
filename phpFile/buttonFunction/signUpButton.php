@@ -17,7 +17,7 @@ if (isset($_POST['athNum']) && isset($_POST['athFirst']) && isset($_POST['athLas
     $req_email = $_POST['athEmail'];
     $req_pass = $_POST['athPass'];
     $req_img = "sample.png"; // Assuming a default image
-    $req_user_type = ($req_stu_id === 'N/A') ? 'coach' : 'athlete';
+    $req_user_type = ($req_stu_id === 'N/A') ? 'COACH' : 'ATHLETE';
     $is_verified = 0;
     $verification_code = random_int(100000, 999999); // Generate a unique OTP (6-digit code)
 

@@ -21,7 +21,7 @@ function getSports() {
 
 function getPositions(sport) {
     if (sport === "--") {
-        // Reset positions dropdown if the default option is selecteds
+        // Reset positions dropdown if the default option is selected
         document.getElementById("positionInput").innerHTML = '<option value="--">--</option>';
         return;
     }
@@ -36,8 +36,8 @@ function getPositions(sport) {
             positionInput.innerHTML = '<option value="--">--</option>'; // Reset options
             data.forEach(function(position) {
                 var option = document.createElement("option");
-                option.value = position.id;
-                option.text = position.position;
+                option.value = position.positions;
+                option.text = position.positions;
                 positionInput.appendChild(option);
             });
         },
@@ -46,6 +46,7 @@ function getPositions(sport) {
         }
     });
 }
+
 
 function validateSignUp(){
     let isValid = true;
@@ -90,6 +91,23 @@ $(document).ready(function() {
         validateStudentNumber();
     });
 
+    document.getElementById("sportInput").addEventListener("change", function() {
+        var selectedSportInput = this.value;
+        var studentNumber = $('#athNum').val();
+        var selectedSport;
+
+        if (studentNumber === "N/A") {
+            selectedSport = "COACH";
+        } else {
+            selectedSport = selectedSportInput;
+        }
+        getPositions(selectedSport);
+
+        console.log(selectedSport);
+    });
+
+    
+    
     // Function to validate student number
     function validateStudentNumber() {
         var studentNumber = $('#athNum').val().trim();
