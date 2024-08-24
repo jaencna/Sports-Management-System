@@ -74,7 +74,7 @@
         }
 
         .sidebar a {
-            padding: 30px 8px 8px 80px;
+            padding: 30px 8px 5px 80px;
             /* Adjust padding to make space for icons */
             text-decoration: none;
             font-size: 23px;
@@ -181,6 +181,11 @@
         .activa {
             color:white;
         }
+
+        hr{
+            color:gray;
+            
+        }
     </style>
 
     
@@ -192,6 +197,7 @@
     </div>
 
     <div id="mySidebar" class="sidebar"  onmouseover="openNav()" onmouseleave="closeNav()" onclick="toggleNav()">
+    <div style="margin-top:-59px; height: 70px; color: white; align-content: center;"> <img src="../../images/homepage/natakbo.png" style="padding-left: 18px;" height="40" > </div>
         <div id="userProfile" class="d-flex align-items-center">
             <img title="Click to View or Edit" src="" alt="Profile Image" id="profileImage" class="mr-3">
             <input type="file" id="fileInput"  accept="image/*" style="display: none;" />
@@ -203,7 +209,7 @@
         </div>
 
         
-        <a href="admin.php" class="loading-link" title="Home Page"><i class="fa-solid fa-house active"></i>Home</a>
+        <a href="coaching.php" class="loading-link" title="Home Page"><i class="fa-solid fa-house active"></i>Home</a>
         <hr style="width: 100vh; font-weight:bold;">
         <div class="teamManager" style="height: 33vh;">
             <a href="manageTeam.php" class="loading-link" title="Manage Team"><i class="fa-solid fa-people-group"></i>Manage Team</a>
@@ -326,7 +332,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" title="Change Profile Photo" class="btn btn-success" id="updatePhoto">Change Profile Picture</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
             </div>
         </div>
