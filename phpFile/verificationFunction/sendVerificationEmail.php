@@ -21,7 +21,7 @@ function sendVerificationEmail($recipientEmail, $verificationCode, $userType) {
         $mail->addAddress($recipientEmail);
 
         // Generate verification link
-        $verificationLink = "http://localhost/sportSystem/verifyEmail.php?email=" . urlencode($recipientEmail) . "&code=" . urlencode($verificationCode) . "&type=" . urlencode($userType);
+        $verificationLink = "http://localhost/sportManagementSystem/verifyEmail.php?email=" . urlencode($recipientEmail) . "&code=" . urlencode($verificationCode) . "&type=" . urlencode($userType);
 
         // Content
         $mail->isHTML(true);
