@@ -182,6 +182,7 @@
     </div>
 
     <div id="mySidebar" class="sidebar"  onmouseover="openNav()" onmouseleave="closeNav()" onclick="toggleNav()">
+    <div style="margin-top:-45px; height: 70px; color: white; align-content: center;"> <img src="../../images/homepage/natakbo.png" style="padding-left: 18px;" height="40" > </div>
         <div id="userProfile" class="d-flex align-items-center">
             <img title="Click to View or Edit" src="" alt="Profile Image" id="profileImage" class="mr-3">
             <input type="file" id="fileInput"  accept="image/*" style="display: none;" />
