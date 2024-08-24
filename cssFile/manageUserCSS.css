@@ -167,6 +167,20 @@ body {
 
 #notificationButton {
     position: relative;
+    background-color: #ffd900; /* Initial background color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding inside the button */
+    color: #333; /* Text color */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+/* Hover effect */
+#notificationButton:hover {
+    background-color: #a88400; /* Darker background color on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
 }
 
 #notificationButton .badge {

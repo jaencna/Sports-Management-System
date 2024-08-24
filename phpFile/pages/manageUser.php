@@ -69,11 +69,13 @@
             padding: 30px 8px 8px 80px;
             /* Adjust padding to make space for icons */
             text-decoration: none;
-            font-size: 25px;
+            font-size: 23px;
             color: #333333;
             display: block;
             transition: 0.3s;
             position: relative;
+            font-family: helvetica;
+            width: 50vh;
             /* Ensure icons are positioned correctly */
         }
 
@@ -214,7 +216,7 @@
                 <button type="button" class="btn headbtn btnWidth" id="requestSignUpButton">Request Sign Up</button>
             </div> -->
             <div class="col-md-12" style="text-align: right">
-            <button type="button" id="notificationButton" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <button type="button" id="notificationButton" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fa-solid fa-bell"></i>
             </button>
             <ul class="dropdown-menu">

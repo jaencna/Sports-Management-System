@@ -77,11 +77,13 @@
             padding: 30px 8px 8px 80px;
             /* Adjust padding to make space for icons */
             text-decoration: none;
-            font-size: 25px;
-            color: gray;
+            font-size: 23px;
+            color: #333333;
             display: block;
             transition: 0.3s;
             position: relative;
+            font-family: helvetica;
+            width: 50vh;
             /* Ensure icons are positioned correctly */
         }
 
