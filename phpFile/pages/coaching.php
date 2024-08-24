@@ -106,6 +106,7 @@
             display: block;
             transition: 0.3s;
             margin-left:20px;
+            font-family:helvetica;
         }
 
         .sidebar h1 {
@@ -203,13 +204,15 @@
 
         
         <a href="admin.php" class="loading-link" title="Home Page"><i class="fa-solid fa-house active"></i>Home</a>
-        <b><hr style="width: 100vh; font-weight:bold;"></b>
-        <div class="teamManager" style="overflow-x:hidden; height: 35vh;">
+        <hr style="width: 100vh; font-weight:bold;">
+        <div class="teamManager" style="height: 33vh;">
             <a href="manageTeam.php" class="loading-link" title="Manage Team"><i class="fa-solid fa-people-group"></i>Manage Team</a>
             <a href="createMatch.php" class="loading-link"><i class="fa-solid fa-basketball"></i>Create Match</a>  
-            <a href="rangking.php" class="loading-link"><i class="fa-solid fa-ranking-star"></i>Rankings</a>            
+            <a href="rangking.php" class="loading-link"><i class="fa-solid fa-ranking-star"></i>Rankings</a>
+            <a href="rangking.php" class="loading-link"><i class="fa-solid fa-ranking-star"></i>Rankings</a>
+            <a href="rangking.php" class="loading-link"><i class="fa-solid fa-ranking-star"></i>Rankings</a>              
         </div>
-        <b><hr style="width: 100vh; font-weight:bold;"></b>
+       <hr style="width: 100vh; font-weight:bold;">
         <a href="#" class="loading-link"><i class="fas fa-envelope mr-2"></i>Contact</a>
         <a href="../buttonFunction/logOutButton.php" class="loading-link"><i class="fa-solid fa-right-from-bracket"></i>Log Out</a>
 
@@ -366,27 +369,32 @@
 
     // JS for the Side Bar ------------------------------------------------------
 
-        let navOpen = false;
+    let navOpen = false;
 
-        function toggleNav() {
-            if (navOpen) {
-                closeNav();
-            } else {
-                openNav();
-            }
-            navOpen = !navOpen;
-        }
+function toggleNav() {
+    if (navOpen) {
+        closeNav();
+    } else {
+        openNav();
+    }
+    navOpen = !navOpen;
+}
 
-        function openNav() {
-            document.getElementById("mySidebar").style.width = "250px";
-            document.getElementById("mySidebar").style.left = "0";
-        }
+function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("mySidebar").style.left = "0";
+    document.querySelector('.teamManager').style.overflowY = 'auto'; // Show overflow
+    
+}
 
-        function closeNav() {
-            document.getElementById("mySidebar").style.width = "80px";
-        }
+function closeNav() {
+    document.getElementById("mySidebar").style.width = "80px";
+    document.querySelector('.teamManager').style.overflow = 'hidden'; // Hide overflow
+    
+}
 
         $(document).ready(function() {
+            closeNav();
             $.ajax({
                 type: "GET",
                 url: "../onloadFunction/getLoggedIn.php",
