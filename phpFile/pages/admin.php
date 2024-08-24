@@ -102,10 +102,11 @@
         .sidebar h1,
         .sidebar h2 {
             text-decoration: none;
-            color: rgb(34, 34, 34);
+            color: white;
             display: block;
             transition: 0.3s;
             margin-left:20px;
+            font-family: helvetica;
         }
 
         .sidebar h1 {
