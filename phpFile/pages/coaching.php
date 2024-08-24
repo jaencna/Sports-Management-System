@@ -207,9 +207,7 @@
         <div class="teamManager" style="overflow-x:hidden; height: 35vh;">
             <a href="manageTeam.php" class="loading-link" title="Manage Team"><i class="fa-solid fa-people-group"></i>Manage Team</a>
             <a href="createMatch.php" class="loading-link"><i class="fa-solid fa-basketball"></i>Create Match</a>  
-            <a href="rangking.php" class="loading-link"><i class="fa-solid fa-ranking-star"></i>Rankings</a>
-            
-            
+            <a href="rangking.php" class="loading-link"><i class="fa-solid fa-ranking-star"></i>Rankings</a>            
         </div>
         <b><hr style="width: 100vh; font-weight:bold;"></b>
         <a href="#" class="loading-link"><i class="fas fa-envelope mr-2"></i>Contact</a>
