@@ -23,10 +23,10 @@
     
 
 </head>
-<body>
+<body >
   
     <div class="tabbed-menu">
-      <img class="logo" src="logo.png" > 
+      <img class="logo" src="images/login/LOGO.png" > 
       <ul class="tabs">
         <li id="tab1" class="selected">Log In</li>
         <li id="tab2">Sign Up</li>
@@ -72,13 +72,14 @@
           }
           </style> -->
           <div class="page" id="tab2" style="display:none;"><div class="page" id="tab2" style="display:none;">
-          <div class="form-group">
+          
               <div class="input-group">
+              <p class="login-email inputss"> 
                   <input type="text" name="athNum" id="athNum" class="form-control innerInput" maxlength="11" placeholder="Student Number" required>
+              </p>
               </div>
               <div id="athNumError" class="error-message collapse">Invalid Student Number</div>
-          </div>
-
+          
           <style>
               .error-message {
                   color: red;

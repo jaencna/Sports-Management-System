@@ -1039,8 +1039,10 @@ $(document).ready(function () {
             dataType: 'json',
             success: function(data) {
                 $('#requestSignUpButton .badge').remove(); // Remove existing badge if any
+                $('#notificationButton .badge').remove(); // Remove existing badge if any
                 if (data.count > 0) {
                     $('#requestSignUpButton').append(`<span class="badge badge-light">${data.count}</span>`);
+                    $('#notificationButton').append(`<span class="badge badge-light">${data.count}</span>`)
                 }
             },
             error: function(xhr, status, error) {

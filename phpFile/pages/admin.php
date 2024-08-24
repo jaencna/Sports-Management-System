@@ -8,7 +8,7 @@
     <!-- BS LINKS -->
     <!-- <link rel="stylesheet" href="../../bsCSS/bootstrap.css">
     <link rel="stylesheet" href="../../bsCSS/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     
 
     <!-- Font Awesome Link -->
@@ -62,10 +62,10 @@
             top: 0;
             left: 0;
             /* Ensure it stays at the left edge */
-            background: #FFE3E3;
-            background: -moz-linear-gradient(45deg, #FFE3E3 0%, #B5B5B5 51%, #C0C0C0 100%);
+            background: rgba(18,18,18,255);
+            /* background: -moz-linear-gradient(45deg, #FFE3E3 0%, #B5B5B5 51%, #C0C0C0 100%);
             background: -webkit-linear-gradient(45deg, #FFE3E3 0%, #B5B5B5 51%, #C0C0C0 100%);
-            background: linear-gradient(45deg, #FFE3E3 0%, #B5B5B5 51%, #C0C0C0 100%);
+            background: linear-gradient(45deg, #FFE3E3 0%, #B5B5B5 51%, #C0C0C0 100%); */
             overflow-x: hidden;
             transition: 0.3s;
             padding-top: 60px;
@@ -78,7 +78,7 @@
             /* Adjust padding to make space for icons */
             text-decoration: none;
             font-size: 25px;
-            color: #333333;
+            color: gray;
             display: block;
             transition: 0.3s;
             position: relative;
@@ -103,6 +103,7 @@
             color: rgb(34, 34, 34);
             display: block;
             transition: 0.3s;
+            margin-left:20px;
         }
 
         .sidebar h1 {
@@ -172,6 +173,10 @@
         .table-responsive {
             overflow-x: auto;
         }
+
+        .activa {
+            color:white;
+        }
     </style>
 
     
@@ -183,7 +188,7 @@
     </div>
 
     <div id="mySidebar" class="sidebar"  onmouseover="openNav()" onmouseleave="closeNav()" onclick="toggleNav()">
-    <div style="margin-top:-45px; height: 70px; color: white; align-content: center;"> <img src="../../images/homepage/Sportmng.png" style="padding-left: 18px;" height="40" > </div>
+    <div style="margin-top:-45px; height: 70px; color: white; align-content: center;"> <img src="../../images/homepage/natakbo.png" style="padding-left: 18px;" height="40" > </div>
         <div id="userProfile" class="d-flex align-items-center">
             <img title="Click to View or Edit" src="" alt="Profile Image" id="profileImage" class="mr-3">
             <input type="file" id="fileInput"  accept="image/*" style="display: none;" />
@@ -195,7 +200,7 @@
         </div>
 
         
-        <a href="admin.php" class="loading-link" title="Home Page"><i class="fa-solid fa-house active"></i>Home</a>
+        <a href="admin.php" class="loading-link activa" title="Home Page"><i class="fa-solid fa-house active"></i>Home</a>
         <a href="manageUser.php" class="loading-link" title="Manage Profiles"><i class="fa-solid fa-user"></i>Profiles</a>
         <a href="" class="loading-link"><i class="fa-solid fa-piggy-bank"></i>Salary</a>
         <a href="#" class="loading-link"><i class="fas fa-envelope mr-2"></i>Contact</a>
@@ -205,7 +210,7 @@
     <div id="main" style="background-color: black; height: 2419px; background-image: url('../../images/homepage/TERRAFORM.png');background-size: cover; background-position: center; height: 100vh; background-repeat: no-repeat;overflow-x: hidden; padding-top:20vh;">
 
       <div class = "row">
-        <div class = "col-sm-5" style="height: 150px; color: white; font-size: 90px; padding-top: 100px; padding-left: 100px;"> <b> <p>Play.
+        <div id="play" class = "col-sm-5" style="height: 150px; color: white; font-size: 90px; padding-top: 40px; padding-left: 100px; font-family: arial;"> <b> <p>Play.
           Score.
           Win.</p></b></div>
         <div class = "col-sm-7" style="height: 150px;"> <img src="../../images/homepage/basketbolero.png" class="img-responsive;" style="max-width: 100%; height: auto;"></div>
@@ -317,8 +322,7 @@
     </div>
     <!-- AJAX link -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script>
     // JS for the loading page
     function showLoadingScreen() {

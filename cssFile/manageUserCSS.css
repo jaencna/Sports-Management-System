@@ -1,14 +1,17 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: darkslategray;
+    background-color: #121212;
     display: flex;
     height: 100vh;
     font-family: georgia;
  }
 
 
-
+.delete {
+    background-color: rgb(255, 0, 43) !important;
+    color: white;
+}
 
 #positionInput{
     background-color: #f0eef0;
@@ -69,12 +72,13 @@ body {
 
 .container-coach, .container-athlete {
     padding: 20px;
-    background-color: rgba(148, 148, 148, 0.6);
+    background-color: rgba(187, 187, 187, 0.596);
     border-radius: 30px;
     height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* This will make the buttons stick to the bottom */
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .fixed-buttons {
@@ -161,6 +165,37 @@ body {
     font-size: 12px; /* Adjust font size as needed */
 }
 
+#notificationButton {
+    position: relative;
+}
+
+#notificationButton .badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 24px; /* Adjust the width as needed */
+    height: 24px; /* Adjust the height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px; /* Adjust font size as needed */
+}
+
 .btnWidth {
     width: 20vh;
+}
+
+.headbtn {
+    background-color: gray;
+}
+
+.dropdown-item {
+    cursor: pointer;
+}
+
+.filters {
+    cursor: pointer;
 }
