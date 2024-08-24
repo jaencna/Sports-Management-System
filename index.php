@@ -15,6 +15,8 @@
 
     <!-- Page CSS and JS -->
     <link rel="stylesheet" href="cssFile/signUpCSS.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
     <style>
         
@@ -50,11 +52,11 @@
 					<span class="loginForgot">
 						<hr class="line">
 						<p class="login-email input"> 
-							<input type="text" name="" id="emailPassasdad"  class="innerInput" maxlength="60" placeholder="Enter your email"> 
+							<input type="text" name="" id="emailInput"  class="innerInput" maxlength="60" placeholder="Enter your email"> 
 						</p>
-						<p class="login-submit"> 
-						<input type="submit" name="" id="" class="button-primary" value="Retrieve password">
-					</p> 
+            <p class="login-submit">
+                  <button type="submit" name="retrievePassword" id="retrievePasswordButton" class="button-primary" value="Submit">Submit</button>
+            </p>
 					</span>
 				
           </div>
@@ -128,6 +130,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="jsFile/signUpJS.js"></script>
+    <script src="jsFile/forgotPass.js"></script>
     <script>
         $(document).ready(function() {
             $('.tabs li').click(function(){

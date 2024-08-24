@@ -87,6 +87,18 @@ ol, ul {
 
   }
 
+  /* Add this to your CSS file (signUpCSS.css) or a separate CSS file */
+.spinner-border-sm {
+    width: 1.2rem;
+    height: 1.2rem;
+    border-width: 0.2em;
+}
+.retrievePasswordButton {
+    position: relative;
+    padding-right: 3rem; /* Adjust to accommodate spinner */
+	color: #fff;
+}
+
 
   .container {
 	display: flex;
