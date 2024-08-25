@@ -38,10 +38,16 @@
           <div class="page" id="tab1" style="display:block;">
             	
 					<p class="login-email input"> 
-						<input type="text" name="userEmailLog" id="userEmailLog"  class="innerInput"  maxlength="60" placeholder="E-mail"> 
+						<input type="text" name="userEmailLog" id="userEmailLog"  class="innerInput form-control"  maxlength="60" placeholder="E-mail"> 
+            <div class="invalid-feedback-icon">
+                <i class="bi bi-exclamation-circle-fill"></i>
+            </div>
 					</p>
 					<p class="login-password input"> 
-						<input type="password" name="userPassLog" id="userPassLog" class="innerInput" maxlength="60"  placeholder="Password"> 
+						<input type="password" name="userPassLog" id="userPassLog" class="innerInput form-control" maxlength="60"  placeholder="Password"> 
+            <div class="invalid-feedback-icon">
+                <i class="bi bi-exclamation-circle-fill"></i>
+            </div>
 					</p> 
 					<p class="login-submit"> 
 						<button type="button" name="" id="signInButton" class="button-primary" value="Log In">Log In</button>
@@ -52,7 +58,10 @@
 					<span class="loginForgot">
 						<hr class="line">
 						<p class="login-email input"> 
-							<input type="text" name="" id="emailInput"  class="innerInput" maxlength="60" placeholder="Enter your email"> 
+							<input type="text" name="" id="emailInput"  class="innerInput form-control" maxlength="60" placeholder="Enter your email"> 
+              <div class="invalid-feedback-icon">
+                  <i class="bi bi-exclamation-circle-fill"></i>
+              </div>
 						</p>
             <p class="login-submit">
                   <button type="submit" name="retrievePassword" id="retrievePasswordButton" class="button-primary" value="Submit">Submit</button>
@@ -80,8 +89,10 @@
                   <input type="text" name="athNum" id="athNum" class="form-control innerInput" maxlength="11" placeholder="Student Number" required>
               </p>
               </div>
+              <div class="invalid-feedback-icon">
+                      <i class="bi bi-exclamation-circle-fill"></i>
+              </div>
               <div id="athNumError" class="error-message collapse">Invalid Student Number</div>
-          
           <style>
               .error-message {
                   color: red;
@@ -91,7 +102,7 @@
           </style>
 
 					<p class="login-username2 input"> 
-						<input type="text" name="athFirst" id="athFirst" class="innerInput form-control" maxlength="50"  placeholder="First Name"> 
+						<input type="text" name="athFirst" id="athFirst" class="innerInput form-control" maxlength="50"  placeholder="First Name" required> 
             <div class="invalid-feedback-icon">
                 <i class="bi bi-exclamation-circle-fill"></i>
             </div
@@ -125,21 +136,21 @@
 
 
           <p class="login-email input"> 
-            <input type="email" name="athEmail" id="athEmail" class="innerInput form-control" maxlength="60" placeholder="E-mail"> 
+            <input type="email" name="athEmail" id="athEmail" class="innerInput form-control" maxlength="60" placeholder="E-mail" required> 
             <div class="invalid-feedback-icon">
               <i class="bi bi-exclamation-circle-fill"></i>
             </div>
           </p>
 
           <p class="login-password input"> 
-            <input type="password" name="athPass" id="athPass" class="innerInput form-control" maxlength="60" placeholder="Password"> 
+            <input type="password" name="athPass" id="athPass" class="innerInput form-control" maxlength="60" placeholder="Password" required> 
             <div class="invalid-feedback-icon">
               <i class="bi bi-exclamation-circle-fill"></i>
             </div>
           </p>
 
           <p class="login-password input"> 
-            <input type="password" name="athConPass" id="athConPass" class="innerInput form-control" maxlength="60" placeholder="Confirm Password"> 
+            <input type="password" name="athConPass" id="athConPass" class="innerInput form-control" maxlength="60" placeholder="Confirm Password" required> 
             <div class="invalid-feedback-icon">
               <i class="bi bi-exclamation-circle-fill"></i>
             </div>

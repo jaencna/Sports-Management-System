@@ -4,9 +4,21 @@ $(document).ready(function() {
         
         var email = $('#emailInput').val().trim();
         var $submitBtn = $('#retrievePasswordButton');
-        
+        var $emailInput = $('#emailInput');
+        let isValid = true;
+
         if (email === '') {
-            alert('Please enter your email address.');
+            $emailInput.addClass('is-invalid');
+            $emailInput.focus(); // Optional: focus on the input to draw attention
+            setTimeout(function() {
+                alert('Please enter your email address.');
+            }, 100); // Short delay to ensure the warning is shown first
+            isValid = false;
+        } else {
+            $emailInput.removeClass('is-invalid');
+        }
+
+        if (!isValid) {
             return;
         }
 
