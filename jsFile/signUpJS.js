@@ -131,14 +131,20 @@ $(document).ready(function() {
     // Attach validation function to click event
     $('#signUpButton').click(function() {
         const email = $('#athEmail').val().trim();
-
+        var $submitBtn = $('#signUpButton');
+        var $buttonText = $('#buttonText1');
+    
         if (!validateEmailDomain(email)) {
             alert('Invalid email domain. Please use an allowed email provider.');
             return false;
         }
-
+    
         if (validateStudentNumber()) {
-            // Form data collection and AJAX submission
+            // Disable the button and show spinner
+            $submitBtn.prop('disabled', true);
+            $buttonText.html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...');
+    
+            // Form data collection
             var studentNumber = $('#athNum').val().trim();
             var data = {
                 athNum: studentNumber,
@@ -150,36 +156,59 @@ $(document).ready(function() {
                 athPass: $('#athPass').val().trim(),
                 athConPass: $('#athConPass').val().trim()
             };
-
-
+    
+            // AJAX submission
             $.ajax({
                 url: 'phpFile/buttonFunction/signUpButton.php',
                 type: 'POST',
                 data: data,
                 success: function(response) {
-                    if (response.status === "success"){
-                    alert(response.message);
-                    // Clear the form
-                    $('#athNum').val('');
-                    $('#athFirst').val('');
-                    $('#athLast').val('');
-                    $('#sportInput').val('--');
-                    $('#positionInput').val('--');
-                    $('#athEmail').val('');
-                    $('#athPass').val('');
-                    $('#athConPass').val('');
-                    }
-                    else if (response.status === "error"){
-                        alert('Sign up unsuccessful ' + response.message);
+                    if (response.status === "success") {
+                        // Change button text to success icon
+                        $buttonText.html('<i class="bi bi-check-circle-fill"></i> Success');
+                        setTimeout(function() {
+                            alert(response.message);
+                            // Clear the form
+                            $('#athNum').val('');
+                            $('#athFirst').val('');
+                            $('#athLast').val('');
+                            $('#sportInput').val('--');
+                            $('#positionInput').val('--');
+                            $('#athEmail').val('');
+                            $('#athPass').val('');
+                            $('#athConPass').val('');
+                            // Re-enable the button
+                            $submitBtn.prop('disabled', false);
+                            $buttonText.html('Sign Up');
+                        }, 500);
+                    } else if (response.status === "error") {
+                        // Change button text to error icon
+                        $buttonText.html('<i class="bi bi-x-circle-fill"></i> Error');
+                        setTimeout(function() {
+                            alert('Sign up unsuccessful: ' + response.message);
+                            // Re-enable the button
+                            $submitBtn.prop('disabled', false);
+                            $buttonText.html('Sign Up');
+                        }, 500);
                     }
                 },
                 error: function(xhr, status, error) {
                     console.error('Error:', error);
-                    alert('An error occurred while signing up. Please try again.');
+                    // Change button text to error icon
+                    $buttonText.html('<i class="bi bi-x-circle-fill"></i> Error');
+                    setTimeout(function() {
+                        alert('An error occurred while signing up. Please try again.');
+                        // Re-enable the button
+                        $submitBtn.prop('disabled', false);
+                        $buttonText.html('Sign Up');
+                    }, 500);
                 }
             });
         }
     });
+    
+    
+    
 
 
     $('#signInButton').on('click', function() {

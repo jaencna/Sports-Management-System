@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $mail->isHTML(true);
             $mail->Subject = 'Password Reset Request';
-            $mail->Body    = 'Click the following link to reset your password: <a href="http://localhost/sportSystem/resetPasswordPage.php?token=' . $token . '">Reset Password</a>';
+            $mail->Body    = 'Click the following link to reset your password: <a href="http://localhost/sportManagementSystem/resetPasswordPage.php?token=' . $token . '">Reset Password</a>';
 
             $mail->send();
             echo json_encode(array("status" => "success", "message" => "Password reset link sent to your email."));
