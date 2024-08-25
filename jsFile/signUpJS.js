@@ -130,31 +130,90 @@ $(document).ready(function() {
 
     // Attach validation function to click event
     $('#signUpButton').click(function() {
-        const email = $('#athEmail').val().trim();
-        var $submitBtn = $('#signUpButton');
-        var $buttonText = $('#buttonText1');
+        // Validation variables
+        let athFirst = $('#athFirst').val().trim();
+        let athLast = $('#athLast').val().trim();
+        let athEmail = $('#athEmail').val().trim();
+        let athPass = $('#athPass').val().trim();
+        let athConPass = $('#athConPass').val().trim();
+        let sportInput = $('#sportInput').val();
+        let positionInput = $('#positionInput').val();
     
-        if (!validateEmailDomain(email)) {
-            alert('Invalid email domain. Please use an allowed email provider.');
-            return false;
+        let isValid = true;
+    
+        // Validate first and last name
+        if (athFirst === '') {
+            $('#athFirst').addClass('is-invalid');
+            isValid = false;
+        } else {
+            $('#athFirst').removeClass('is-invalid');
         }
     
-        if (validateStudentNumber()) {
+        if (athLast === '') {
+            $('#athLast').addClass('is-invalid');
+            isValid = false;
+        } else {
+            $('#athLast').removeClass('is-invalid');
+        }
+    
+        // Validate sport and position
+        if (sportInput === '--') {
+            $('#sportInput').addClass('is-invalid');
+            isValid = false;
+        } else {
+            $('#sportInput').removeClass('is-invalid');
+        }
+    
+        if (positionInput === '--') {
+            $('#positionInput').addClass('is-invalid');
+            isValid = false;
+        } else {
+            $('#positionInput').removeClass('is-invalid');
+        }
+    
+        // Validate email
+        if (athEmail === '' || !validateEmailDomain(athEmail)) {
+            $('#athEmail').addClass('is-invalid');
+            isValid = false;
+        } else {
+            $('#athEmail').removeClass('is-invalid');
+        }
+    
+        // Validate password
+        if (athPass === '') {
+            $('#athPass').addClass('is-invalid');
+            isValid = false;
+        } else {
+            $('#athPass').removeClass('is-invalid');
+        }
+    
+        // Validate confirm password
+        if (athConPass === '' || athConPass !== athPass) {
+            $('#athConPass').addClass('is-invalid');
+            isValid = false;
+        } else {
+            $('#athConPass').removeClass('is-invalid');
+        }
+    
+        // Continue with the rest of the validation and AJAX submission only if all fields are valid
+        if (isValid && validateStudentNumber() && validateEmailDomain(athEmail)) {
             // Disable the button and show spinner
+            let $submitBtn = $('#signUpButton');
+            let $buttonText = $('#buttonText1');
             $submitBtn.prop('disabled', true);
             $buttonText.html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...');
     
             // Form data collection
-            var studentNumber = $('#athNum').val().trim();
-            var data = {
+            let studentNumber = $('#athNum').val().trim();
+            let data = {
                 athNum: studentNumber,
-                athFirst: $('#athFirst').val().trim(),
-                athLast: $('#athLast').val().trim(),
-                athSport: $('#sportInput').val(),
-                athPosition: $('#positionInput').val(),
-                athEmail: email,
-                athPass: $('#athPass').val().trim(),
-                athConPass: $('#athConPass').val().trim()
+                athFirst: athFirst,
+                athLast: athLast,
+                athSport: sportInput,
+                athPosition: positionInput,
+                athEmail: athEmail,
+                athPass: athPass,
+                athConPass: athConPass
             };
     
             // AJAX submission
@@ -164,7 +223,7 @@ $(document).ready(function() {
                 data: data,
                 success: function(response) {
                     if (response.status === "success") {
-                        // Change button text to success icon
+                        // Success handling
                         $buttonText.html('<i class="bi bi-check-circle-fill"></i> Success');
                         setTimeout(function() {
                             alert(response.message);
@@ -177,16 +236,14 @@ $(document).ready(function() {
                             $('#athEmail').val('');
                             $('#athPass').val('');
                             $('#athConPass').val('');
-                            // Re-enable the button
                             $submitBtn.prop('disabled', false);
                             $buttonText.html('Sign Up');
                         }, 500);
                     } else if (response.status === "error") {
-                        // Change button text to error icon
+                        // Error handling
                         $buttonText.html('<i class="bi bi-x-circle-fill"></i> Error');
                         setTimeout(function() {
                             alert('Sign up unsuccessful: ' + response.message);
-                            // Re-enable the button
                             $submitBtn.prop('disabled', false);
                             $buttonText.html('Sign Up');
                         }, 500);
@@ -194,11 +251,9 @@ $(document).ready(function() {
                 },
                 error: function(xhr, status, error) {
                     console.error('Error:', error);
-                    // Change button text to error icon
                     $buttonText.html('<i class="bi bi-x-circle-fill"></i> Error');
                     setTimeout(function() {
                         alert('An error occurred while signing up. Please try again.');
-                        // Re-enable the button
                         $submitBtn.prop('disabled', false);
                         $buttonText.html('Sign Up');
                     }, 500);
@@ -206,6 +261,7 @@ $(document).ready(function() {
             });
         }
     });
+    
     
     
     

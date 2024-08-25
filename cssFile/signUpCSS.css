@@ -35,6 +35,18 @@ ol, ul {
     margin-bottom: 30px;
 }
 
+.invalid-feedback-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none; /* Hidden by default */
+}
+
+/* Show the icon when input is invalid */
+.is-invalid ~ .invalid-feedback-icon {
+    display: block;
+}
+
 #loginform { 
 	border: none;
 	background-color: #f2f2f2;
@@ -57,10 +69,9 @@ ol, ul {
 	color: #999999;
 	font-size: 14px;
 	font-weight: lighter;
-	height: 50px;
+	height: 55px;
 	line-height: auto;
 	outline: none;
-	padding-left: 10px;
 	width: 90%;
 	box-sizing: border-box;
 	margin: 20px auto; /* added this to center the input */
@@ -76,7 +87,7 @@ ol, ul {
 	color: #999999;
 	font-size: 14px;
 	font-weight: lighter;
-	height: 50px;
+	height: 55px;
 	line-height: auto;
 	outline: none;
 	width: 90%;
@@ -104,6 +115,7 @@ ol, ul {
 	display: flex;
 	justify-content: center; /* Centers the inputs horizontally */
 	gap: 20px; /* Adds space between the inputs */
+	margin-left: 10px;
   }
   
   .inputs { 
@@ -159,10 +171,8 @@ ol, ul {
 	margin-bottom: 5px;
 	transition: border 0.3s linear;
 }
-
-
 .innerInput {
-	width: 80%;
+	width: 100%;
 	border: none;
 	background: transparent;
 	line-height: 50px;
@@ -171,6 +181,8 @@ ol, ul {
 	color: #000000;	
 	padding: 0;
 	text-align: left;
+	padding-left: 50px;
+	
 }
 
 .input:focus{ 

@@ -91,33 +91,60 @@
           </style>
 
 					<p class="login-username2 input"> 
-						<input type="text" name="athFirst" id="athFirst" class="innerInput" maxlength="50"  placeholder="First Name"> 
+						<input type="text" name="athFirst" id="athFirst" class="innerInput form-control" maxlength="50"  placeholder="First Name"> 
+            <div class="invalid-feedback-icon">
+                <i class="bi bi-exclamation-circle-fill"></i>
+            </div
 					</p>
 					<p class="login-username2 input"> 
-						<input type="text" name="athLast" id="athLast"  class="innerInput" maxlength="50" placeholder="Last Name" required> 
+						<input type="text" name="athLast" id="athLast"  class="innerInput form-control" maxlength="50" placeholder="Last Name" required>
+            <div class="invalid-feedback-icon">
+                <i class="bi bi-exclamation-circle-fill"></i>
+            </div>
 					</p>
           <div class="container">
-  <p class="login-sport inputs"> 
-    <select id="sportInput" name="athSport">
-      <option value="--">--</option>
-    </select>
-  </p>
-  <p class="login-position inputs"> 
-    <select id="positionInput" name="athPosition">
-      <option value="--">--</option>
-    </select>
-  </p>
-</div>
+              <p class="login-sport inputs">
+                  <select id="sportInput" name="athSport" class="form-control">
+                      <option value="--">--</option>
+                      <!-- Add other options here -->
+                  </select>
+                  <div class="invalid-feedback-icon">
+                      <i class="bi bi-exclamation-circle-fill"></i>
+                  </div>
+              </p>
+              <p class="login-position inputs"> 
+                  <select id="positionInput" name="athPosition" class="form-control">
+                      <option value="--">--</option>
+                      <!-- Add other options here -->
+                  </select>
+                  <div class="invalid-feedback-icon">
+                      <i class="bi bi-exclamation-circle-fill"></i>
+                  </div>
+              </p>
+          </div>
 
-					<p class="login-email input"> 
-						<input type="E-mail" name="athEmail" id="athEmail" class="innerInput"  maxlength="60" placeholder="E-mail"> 
-					</p>
-					<p class="login-password input"> 
-						<input type="password" name="athPass" id="athPass" class="innerInput" maxlength="60"  placeholder="Password"> 
-					</p> 
-					<p class="login-password input"> 
-						<input type="password" name="athConPass" id="athConPass"  class="innerInput" maxlength="60" placeholder="Confirm Password"> 
-					</p> 
+
+          <p class="login-email input"> 
+            <input type="email" name="athEmail" id="athEmail" class="innerInput form-control" maxlength="60" placeholder="E-mail"> 
+            <div class="invalid-feedback-icon">
+              <i class="bi bi-exclamation-circle-fill"></i>
+            </div>
+          </p>
+
+          <p class="login-password input"> 
+            <input type="password" name="athPass" id="athPass" class="innerInput form-control" maxlength="60" placeholder="Password"> 
+            <div class="invalid-feedback-icon">
+              <i class="bi bi-exclamation-circle-fill"></i>
+            </div>
+          </p>
+
+          <p class="login-password input"> 
+            <input type="password" name="athConPass" id="athConPass" class="innerInput form-control" maxlength="60" placeholder="Confirm Password"> 
+            <div class="invalid-feedback-icon">
+              <i class="bi bi-exclamation-circle-fill"></i>
+            </div>
+          </p>
+
 					
 					<button type="button" id="signUpButton" class="button-primary"><span id="buttonText1">Sign Up</span></button>
 					
