@@ -7,34 +7,54 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
-        body {
-            background-color: #121212;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-image: url('images/login/BGcross.png');
-            font-family: "helvetica";
-        }
-        .card {
-            border: none;
-            border-radius: 40px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-        }
-        .card-body {
-            padding: 2rem;
-        }
-        .invalid-feedback ul {
-            margin: 0;
-            padding-left: 1rem;
-        }
+    body {
+        background-color: #121212;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-image: url('images/login/BGcross.png');
+        font-family: "helvetica";
+    }
+    .card {
+        border: none;
+        border-radius: 40px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+    .card-body {
+        padding: 2rem;
+        text-align: center; /* Center the content within the card-body */
+    }
+    .invalid-feedback ul {
+        margin: 0;
+        padding-left: 1rem;
+    }
 
-        .btnReset {
-
-            background-color:#4acb5f;
-        }
-    </style>
+    .btnReset {
+        background-color: #4acb5f;
+        color: #fff; /* Ensure text color is readable */
+        width: 40%; /* Set button width to 40% of its container */
+        height: 40px;
+        margin: 20px auto; /* Center the button horizontally */
+        display: block; /* Ensure the button is treated as a block element */
+        padding: 8px; /* Adjust padding if necessary */
+        border-radius: 10px; /* Optional: rounded corners for the button */
+        font-size: 12pt; /* Optional: adjust font size */
+    }
+    
+    .form-control {
+        display: inline-block; /* Make input fields inline-block for centering */
+        width: 80%; /* Adjust width if necessary */
+        margin: 0 auto; /* Center the input fields horizontally */
+    }
+    .form-label {
+        display: block; /* Ensure labels are block elements for proper alignment */
+        text-align: left; /* Center the labels */
+        padding-left: 60px;
+        margin-bottom: 0.5rem; /* Add some space below the label */
+    }
+</style>
 </head>
 <body>
     <div class="container">
@@ -71,7 +91,7 @@
                                     Passwords do not match.
                                 </div>
                             </div>
-                            <button type="button" id="resetPasswordBtn" class="btn btnReset w-100">Reset Password</button>
+                            <button type="button" id="resetPasswordBtn" class="btn btnReset btn-block">Reset Password</button>
                         </form>
                     </div>
                 </div>

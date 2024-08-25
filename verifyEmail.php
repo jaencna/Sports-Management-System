@@ -34,7 +34,7 @@
             color: #fff; /* Ensure text color is readable */
             width: 40%; /* Set button width to 40% of its container */
             height: 40px;
-            margin: 40px auto; /* Center the button horizontally */
+            margin: 20px auto; /* Center the button horizontally */
             display: block; /* Ensure the button is treated as a block element */
             padding: 8px; /* Adjust padding if necessary */
             border-radius: 10px; /* Optional: rounded corners for the button */
@@ -51,7 +51,7 @@
         .form-group label {
             margin-bottom: 10px;
             font-size: 12pt;
-            color: black; /* Optional: Change label color */
+            color: #black; /* Optional: Change label color */
             text-align: center; /* Center the label text */
             width: 100%; /* Ensure the label takes up the full width */
         }
@@ -134,7 +134,6 @@
                         <?php if (!empty($message)) echo $message; ?>
                         <form action="verifyEmail.php" method="POST">
                             <div class="form-group">
-                                <label for="otp">Verification Code:</label>
                                 <input type="text" id="otp" name="otp" class="form-control" required placeholder="Enter verification code">
                             </div>
                             <button type="submit" class="btn btnVerify btn-block">Verify Email</button>
