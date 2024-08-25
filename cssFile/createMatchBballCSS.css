@@ -1,0 +1,222 @@
+/* Main Content */
+#main {
+    display: flex;
+    flex-direction: column;
+    margin-left: 80px; /* Space for sidebar */
+    background-color: black;
+    background-image: url('../images/homepage/TERRAFORM.png');
+    transition: margin-left .3s;
+    position: relative; /* Keeps it in the flow of the document */
+    overflow: hidden; /* Prevent overflow affecting layout */
+    width: 100%;
+    height: 100vh; /* Ensures the full height is utilized */
+}
+#teamSelect {
+    padding: 8px 12px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    background-color: white;
+    border: 2px solid #333;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: center;
+}
+
+#positionSelect {
+    padding: 8px 12px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    width: 100%;
+    background-color: white;
+    border: 2px solid #333;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.top-drop {
+    height: 7vh;
+    width: 100%;
+    background-color: rgba(187, 187, 187, 0.596);
+    margin-left: 0px;
+    padding: 5px;;
+}
+
+.top-main {
+    height: 45vh;
+    width: 100%;
+    background-color: rgba(187, 187, 187, 0.596);
+    margin-left: 0px;
+    overflow-y: auto;
+  
+}
+
+.bottom-drop {
+    height: 7vh;
+    width: 100%;
+
+    margin-left: 0px;
+    padding: 5px;
+    
+}
+
+.bottom-main {
+    height: 41vh;
+    width: 100%;
+
+    margin-left: 0px;
+    overflow-y: auto;
+    padding-top: 5vh;
+}
+
+ #selectedAthletes{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px; /* Adjust spacing between items as needed */
+}
+
+.selected-athlete-item {
+    background-color: #f0f0f0; /* Light gray background */
+    padding: 5px; /* Optional padding for better appearance */
+    border-radius: 3px; /* Optional rounded corners */
+    margin-bottom: 2px; /* Optional margin for spacing */
+    display: inline-block; /* Ensure items are inline and can have margins */
+    height: 34vh;
+    width: 25vh;
+    cursor: pointer;
+    text-align: center;
+    align-items: center;
+    position: relative; /* Ensure absolute positioning for the image works */
+}
+
+.selected-athlete-item .card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.selected-athlete-item .card-img-top {
+    height: 100px; /* Fixed height */
+    width: 100px;  /* Fixed width */
+    object-fit: cover; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center image horizontally */
+    display: block; /* Remove any inline spacing */
+}
+
+.selected-athlete-item .card-body {
+    padding: 0.8rem; /* Reduce padding */
+}
+
+.selected-athlete-item .card-title {
+    font-size: 1.3rem; /* Adjust font size */
+}
+
+.selected-athlete-item .card-text {
+    font-size: .8rem; /* Adjust font size */
+}
+.remove-athlete {
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: red; /* Color of the "X" button */
+    font-weight: bold; /* Make "X" button text bold */
+}
+
+.athlete-info {
+    display: flex;
+    justify-content: space-between; /* Space between height and weight */
+    gap: 5px; /* Adjust the gap as needed */
+}
+
+.athlete-info .card-text {
+    margin: 0; /* Remove default margin for better alignment */
+}
+
+
+.custom-card  {
+    background-color: #f0f0f0; /* Light gray background */
+    padding: 5px; /* Optional padding for better appearance */
+    border-radius: 3px; /* Optional rounded corners */
+    margin-bottom: 2px; /* Optional margin for spacing */
+    display: inline-block; /* Ensure items are inline and can have margins */
+    height: 34vh;
+    width: 25vh;
+    cursor: pointer;
+    text-align: center;
+    align-items: center;
+    position: relative; /* Ensure absolute positioning for the image works */
+}
+c
+.custom-card .card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.custom-card .card-img-top {
+    height: 100px; /* Fixed height */
+    width: 100px;  /* Fixed width */
+    object-fit: cover; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center image horizontally */
+    display: block; /* Remove any inline spacing */
+}
+
+.custom-card .card-body {
+    padding: 0.8rem; /* Reduce padding */
+}
+
+.custom-card .card-title {
+    font-size: 1.3rem; /* Adjust font size */
+}
+
+.custom-card .card-text {
+    font-size: .8rem; /* Adjust font size */
+}
+
+#athleteCardContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Ensure cards wrap properly on smaller screens */
+}
+
+#selectedAthletes {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Ensure cards wrap properly on smaller screens */
+}
+
+/* Adjust column alignment within the row */
+.row {
+    display: flex;
+    justify-content: center; /* Center the columns within the row */
+    width: 100%;
+}
+
+/* Optional: Ensure card column width is consistent */
+.col-sm-6,
+.col-md-4,
+.col-lg-3 {
+    display: flex;
+    justify-content: center;
+}
+
+.athlete-card.disabled {
+    opacity: 0.5; /* Make the card look disabled */
+    pointer-events: none; /* Disable clicks */
+    cursor: not-allowed; /* Change cursor to indicate no action */
+}
+
+.athlete-card.disabled .custom-card {
+    border: 2px solid #ccc; /* Optional: Add a border to indicate disabled state */
+}
+
+

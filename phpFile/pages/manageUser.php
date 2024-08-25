@@ -329,6 +329,8 @@
                                     <th>Password</th>
                                     <th>Sport</th>
                                     <th>Position</th>
+                                    <th>Height</th>
+                                    <th>Weight</th>
                                     <th>STATUS</th>
                                     <th>IMG</th>
                                     
@@ -380,7 +382,7 @@
                 <div class="modal-body">
                 <select id="coachSportInput" name="athSport">
                         <option value="--">-- Select Sport --</option>
-                    </select>
+                </select>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

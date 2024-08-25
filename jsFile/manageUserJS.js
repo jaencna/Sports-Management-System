@@ -489,6 +489,8 @@ $(document).ready(function () {
                         <td class="editable-athlete" title="Double click to Edit" data-field="ath_pass" data-id="${athlete.ath_email}">${athlete.ath_pass}</td>
                         <td class="editable-sport-athlete" title="Double click to Edit" data-field="ath_sport" data-position="${athlete.ath_position}" data-id="${athlete.ath_email}">${athlete.ath_sport}</td>
                         <td class="editable-position" title="Double click to Edit" data-field="ath_position" data-sport="${athlete.ath_sport}" data-id="${athlete.ath_email}">${athlete.ath_position}</td>
+                        <td class="editable-athlete" title="Double click to Edit" data-field="ath_height" data-position="${athlete.ath_height}" data-id="${athlete.ath_email}">${athlete.ath_height}</td>
+                        <td class="editable-athlete" title="Double click to Edit" data-field="ath_weight " data-sport="${athlete.ath_weight}" data-id="${athlete.ath_weight}">${athlete.ath_weight}</td>
                         <td class="editable-status-athlete" title="Double click to Edit" data-field="STATUS" data-id="${athlete.ath_email}">${athlete.STATUS}</td>
                         <td>
                             <button class="btn btn-info view-image-athlete" data-id="${athlete.ath_email}" data-image="${athlete.ath_img}"><i class="fa-solid fa-eye"></i></button>
@@ -756,7 +758,7 @@ $(document).ready(function () {
             success: function (positionData) {
                 let select = $('<select class="form-control"></select>');
                 positionData.forEach(function(position) {
-                    select.append(`<option value="${position}" ${position === currentPosition ? 'selected' : ''}>${position}</option>`);
+                    select.append(`<option value="${position.positions}" ${position.positions === currentPosition ? 'selected' : ''}>${position.positions}</option>`);
                 });
                 cell.html(select);
                 select.focus().on('blur', function () {
