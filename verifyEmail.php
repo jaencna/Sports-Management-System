@@ -51,7 +51,7 @@
         .form-group label {
             margin-bottom: 10px;
             font-size: 12pt;
-            color: #black; /* Optional: Change label color */
+            color: black; /* Optional: Change label color */
             text-align: center; /* Center the label text */
             width: 100%; /* Ensure the label takes up the full width */
         }
