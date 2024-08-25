@@ -323,7 +323,7 @@ $(document).ready(function() {
     
             // Disable the button and show spinner
             $submitBtn.prop('disabled', true);
-            $submitBtn.html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...');
+            $submitBtn.html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Signing in...');
     
     
     
