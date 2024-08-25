@@ -15,7 +15,7 @@ $(document).ready(function() {
         $submitBtn.html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...');
 
         $.ajax({
-            url: 'passwordReset.php',
+            url: 'phpFile/verificationFunction/passwordReset.php',
             method: 'POST',
             data: { email: email },
             dataType: 'json',

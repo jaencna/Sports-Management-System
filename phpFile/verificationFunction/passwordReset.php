@@ -1,9 +1,9 @@
 <?php
-require 'phpFile/connection/connection.php'; // Include the database connection
+require '../connection/connection.php'; // Include the database connection
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'vendor/autoload.php';
+require '../../vendor/autoload.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
