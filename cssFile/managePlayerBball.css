@@ -27,11 +27,11 @@
 } */
 
 #positionSelect {
-    padding: 8px 12px;
+    padding: 2px 12px ;
     font-size: 1.2em;
     font-weight: bold;
     color: #333;
-    width: 100%;
+    width: 40%;
     background-color: white;
     border: 2px solid #333;
     border-radius: 5px;
@@ -39,6 +39,9 @@
     cursor: pointer;
     transition: all 0.3s ease;
     text-align: center;
+    align-items: right;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 30px;
 }
 
 /* .top-drop {
@@ -59,12 +62,16 @@
 }
 
 .bottom-drop {
-    height: 7vh;
-    width: 100%;
-
-    margin-left: 0px;
-    padding: 5px;
-    
+    height: 10vh;
+    width: 100%; /* Ensure it takes the full width */
+    margin-left: auto;  /* Center the container horizontally */
+    margin-right: auto; /* Center the container horizontally */
+    padding: 0 40px 0px 40px; /* Adjust padding as needed */
+    background-color: rgb(255, 255, 255);
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+     /* Center vertically */
+    border-radius: 20px;
 }
 
 .bottom-main {
@@ -85,7 +92,7 @@
 .selected-athlete-item {
     background-color: #f0f0f0; /* Light gray background */
     padding: 5px; /* Optional padding for better appearance */
-    border-radius: 3px; /* Optional rounded corners */
+    border-radius: 10px; /* Optional rounded corners */
     margin-bottom: 2px; /* Optional margin for spacing */
     display: inline-block; /* Ensure items are inline and can have margins */
     height: 34vh;
@@ -144,7 +151,7 @@
 .custom-card  {
     background-color: #f0f0f0; /* Light gray background */
     padding: 5px; /* Optional padding for better appearance */
-    border-radius: 3px; /* Optional rounded corners */
+    border-radius: 15px; /* Optional rounded corners */
     margin-bottom: 2px; /* Optional margin for spacing */
     display: inline-block; /* Ensure items are inline and can have margins */
     height: 34vh;
@@ -168,6 +175,7 @@ c
     object-fit: cover; /* Maintain aspect ratio */
     margin: 0 auto; /* Center image horizontally */
     display: block; /* Remove any inline spacing */
+    
 }
 
 .custom-card .card-body {

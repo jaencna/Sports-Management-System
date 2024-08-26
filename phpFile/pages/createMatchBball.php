@@ -229,12 +229,18 @@
     <!-- Improved HTML Structure -->
     <div id="main" style="padding:50px;">
         <div class="row top-drop" style="border-radius:20px 20px 0px 0px;" >
-            <select id="teamSelect" style="border-radius:20px 20px 20px 20px;">
+            <div class="col-sm-7" style="justify-content: right;padding-top:1px;padding-left:30px;Font-weight:Bold;font-size:20pt;">Team</div>
+            <div class="col-sm-3">
+            <select id="teamSelect" style="border-radius:12px 12px 12px 12px;width:50%;margin-left:140px;height:85%;font-size: 12pt;">
                 <option>TEAM-1</option>
                 <option>TEAM-2</option>
             </select>
             
+            </div>
+            <div class="col-sm-2" ><button id="createMatchOpenModal" type="button" class="btn btn-sucess" style=":box-shadow: 0 2px 5px rgba(2, 2, 2, 1);">Create Match</button></div>
+            
         </div>
+        
         <div class="row top-main" style="border-radius:0px 0px 20px 20px;">
             <div id="selectedAthletes">
             
@@ -257,7 +263,7 @@
             </div>
         </div>
 
-        <button id="createMatchOpenModal" type="button" class="btn btn-sucess">Create Match</button>
+        
     </div>
     
 
