@@ -40,6 +40,8 @@ $(document).ready(function() {
                     // Delay the alert to allow the button text to update
                     setTimeout(function() {
                         alert('Password reset link sent to your email.');
+                        // Refresh the page instead of clearing the form
+                        window.location.reload();
                     }, 500); // Adjust the delay time (in milliseconds) as needed
                 } else {
                     // Re-enable the button and show error message

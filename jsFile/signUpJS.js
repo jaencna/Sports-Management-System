@@ -235,17 +235,8 @@ $(document).ready(function() {
                         $buttonText.html('<i class="bi bi-check-circle-fill"></i> Success');
                         setTimeout(function() {
                             alert(response.message);
-                            // Clear the form
-                            $('#athNum').val('');
-                            $('#athFirst').val('');
-                            $('#athLast').val('');
-                            $('#sportInput').val('--');
-                            $('#positionInput').val('--');
-                            $('#athEmail').val('');
-                            $('#athPass').val('');
-                            $('#athConPass').val('');
-                            $submitBtn.prop('disabled', false);
-                            $buttonText.html('Sign Up');
+                            // Refresh the page instead of clearing the form
+                            window.location.reload();
                         }, 500);
                     } else if (response.status === "error") {
                         // Error handling
@@ -256,6 +247,7 @@ $(document).ready(function() {
                             $buttonText.html('Sign Up');
                         }, 500);
                     }
+                    
                 },
                 error: function(xhr, status, error) {
                     console.error('Error:', error);
