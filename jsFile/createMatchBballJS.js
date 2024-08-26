@@ -216,6 +216,7 @@ $(document).ready(function () {
                     let result = JSON.parse(response);
                     if (result.status === 'success') {
                         alert('Match created successfully!');
+                        window.location.reload();
                         team1SelectedAthletes = [];
                         team2SelectedAthletes = [];
                         generalSelectedAthletes = [];

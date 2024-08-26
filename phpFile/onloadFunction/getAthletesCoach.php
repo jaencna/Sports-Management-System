@@ -7,11 +7,11 @@ $status = "active";
 
 // Prepare the SQL query based on the filters
 if ($position !== '--') {
-    $query = "SELECT ath_first, ath_last, ath_email, ath_pass, ath_sport, ath_position, ath_height, ath_weight, ath_img, STATUS FROM athlete_tbl WHERE ath_position = ? AND STATUS = ?";
+    $query = "SELECT ath_id, ath_first, ath_last, ath_email, ath_pass, ath_sport, ath_position, ath_height, ath_weight, ath_img, STATUS FROM athlete_tbl WHERE ath_position = ? AND STATUS = ?";
     $stmt = $conn->prepare($query);
     $stmt->bind_param('ss', $position, $status);
 } else {
-    $query = "SELECT ath_first, ath_last, ath_email, ath_pass, ath_sport, ath_position, ath_height, ath_weight, ath_img, STATUS  FROM athlete_tbl  WHERE STATUS = ?";
+    $query = "SELECT ath_id, ath_first, ath_last, ath_email, ath_pass, ath_sport, ath_position, ath_height, ath_weight, ath_img, STATUS  FROM athlete_tbl  WHERE STATUS = ?";
     $stmt = $conn->prepare($query);
     $stmt->bind_param('s', $status);
 }
