@@ -63,7 +63,9 @@ $(document).ready(function () {
             input.on('blur keydown', function (e) {
                 if (e.type === 'blur' || e.key === 'Enter') {
                     let newValue = input.val().trim();
-
+                    setTimeout(function() {
+                        window.location.reload();
+                    }, 500);
                     if (newValue && newValue !== originalValue) {
                         updateAthleteField(athleteId, fieldName, newValue, function () {
                             input.replaceWith(originalElement);
