@@ -128,8 +128,42 @@ $(document).ready(function() {
         return valid;
     }
 
+
+
+    // Function to validate password
+    function validatePassword(password) {
+        const passwordErrors = [];
+        const passwordRequirements = {
+            length: /^(?=.{8,}).*$/,
+            uppercase: /^(?=.*[A-Z]).*$/,
+            lowercase: /^(?=.*[a-z]).*$/,
+            digit: /^(?=.*[0-9]).*$/,
+            specialChar: /^(?=.*[!@#$%^&*]).*$/,
+        };
+
+        // Validate each requirement and add error messages if necessary
+        if (!passwordRequirements.length.test(password)) {
+            passwordErrors.push('Password must contain at least 8 characters.');
+        }
+        if (!passwordRequirements.uppercase.test(password)) {
+            passwordErrors.push('Password must contain at least one uppercase letter.');
+        }
+        if (!passwordRequirements.lowercase.test(password)) {
+            passwordErrors.push('Password must contain at least one lowercase letter.');
+        }
+        if (!passwordRequirements.digit.test(password)) {
+            passwordErrors.push('Password must contain at least one digit (0-9).');
+        }
+        if (!passwordRequirements.specialChar.test(password)) {
+            passwordErrors.push('Password must contain at least one special character (!@#$%^&*).');
+        }
+
+        return passwordErrors;
+    }
+
     // Attach validation function to click event
     $('#signUpButton').click(function() {
+        // Validation variables
         // Validation variables
         let athNum = $('#athNum').val();
         let athFirst = $('#athFirst').val().trim();
@@ -139,16 +173,17 @@ $(document).ready(function() {
         let athConPass = $('#athConPass').val().trim();
         let sportInput = $('#sportInput').val();
         let positionInput = $('#positionInput').val();
-    
+
         let isValid = true;
 
+        // Validate student number
         if (athNum === '') {
             $('#athNum').addClass('is-invalid');
             isValid = false;
         } else {
             $('#athNum').removeClass('is-invalid');
         }
-    
+
         // Validate first and last name
         if (athFirst === '') {
             $('#athFirst').addClass('is-invalid');
@@ -156,14 +191,14 @@ $(document).ready(function() {
         } else {
             $('#athFirst').removeClass('is-invalid');
         }
-    
+
         if (athLast === '') {
             $('#athLast').addClass('is-invalid');
             isValid = false;
         } else {
             $('#athLast').removeClass('is-invalid');
         }
-    
+
         // Validate sport and position
         if (sportInput === '--') {
             $('#sportInput').addClass('is-invalid');
@@ -171,14 +206,14 @@ $(document).ready(function() {
         } else {
             $('#sportInput').removeClass('is-invalid');
         }
-    
+
         if (positionInput === '--') {
             $('#positionInput').addClass('is-invalid');
             isValid = false;
         } else {
             $('#positionInput').removeClass('is-invalid');
         }
-    
+
         // Validate email
         if (athEmail === '' || !validateEmailDomain(athEmail)) {
             $('#athEmail').addClass('is-invalid');
@@ -186,15 +221,19 @@ $(document).ready(function() {
         } else {
             $('#athEmail').removeClass('is-invalid');
         }
-    
+
         // Validate password
-        if (athPass === '') {
+        let passwordErrors = validatePassword(athPass);
+        if (passwordErrors.length > 0) {
             $('#athPass').addClass('is-invalid');
             isValid = false;
+            setTimeout(function() {
+                alert('Password Error:\n' + passwordErrors.join('\n'));
+            }, 500); // Adjust the delay time (in milliseconds) as needed
         } else {
             $('#athPass').removeClass('is-invalid');
         }
-    
+
         // Validate confirm password
         if (athConPass === '' || athConPass !== athPass) {
             $('#athConPass').addClass('is-invalid');
@@ -202,7 +241,7 @@ $(document).ready(function() {
         } else {
             $('#athConPass').removeClass('is-invalid');
         }
-    
+
         // Continue with the rest of the validation and AJAX submission only if all fields are valid
         if (isValid && validateStudentNumber() && validateEmailDomain(athEmail)) {
             // Disable the button and show spinner
@@ -210,7 +249,7 @@ $(document).ready(function() {
             let $buttonText = $('#buttonText1');
             $submitBtn.prop('disabled', true);
             $buttonText.html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...');
-    
+
             // Form data collection
             let studentNumber = $('#athNum').val().trim();
             let data = {
@@ -223,7 +262,7 @@ $(document).ready(function() {
                 athPass: athPass,
                 athConPass: athConPass
             };
-    
+
             // AJAX submission
             $.ajax({
                 url: 'phpFile/buttonFunction/signUpButton.php',
@@ -247,7 +286,7 @@ $(document).ready(function() {
                             $buttonText.html('Sign Up');
                         }, 500);
                     }
-                    
+
                 },
                 error: function(xhr, status, error) {
                     console.error('Error:', error);

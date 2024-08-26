@@ -84,7 +84,7 @@
         // Check if the OTP exists in request_signup_tbl
         $stmt = $conn->prepare("SELECT * FROM request_signup_tbl WHERE verification_code = ?");
         if ($stmt === false) {
-            $message = '<div class="alert alert-danger" role="alert">Prepare statement failed: ' . $conn->error . '</div>';
+            $message = 'Prepare statement failed: ' . $conn->error;
         } else {
             $stmt->bind_param("s", $otp);
             $stmt->execute();
@@ -94,15 +94,15 @@
                 // Prepare and execute update statement to mark email as verified
                 $updateStmt = $conn->prepare("UPDATE request_signup_tbl SET is_verified = 1, verification_code = NULL WHERE verification_code = ?");
                 if ($updateStmt === false) {
-                    $message = '<div class="alert alert-danger" role="alert">Prepare update statement failed: ' . $conn->error . '</div>';
+                    $message = 'Prepare update statement failed: ' . $conn->error;
                 } else {
                     $updateStmt->bind_param("s", $otp);
                     $updateStmt->execute();
-
-                    $message = '<div class="alert alert-success" role="alert">Email verified successfully!</div>';
+                    
+                    $message = 'Email verified successfully!'; // Success message
                 }
             } else {
-                $message = '<div class="alert alert-danger" role="alert">Invalid verification code.</div>';
+                $message = 'Invalid verification code.'; // Error message
             }
 
             $stmt->close();
@@ -131,7 +131,7 @@
                         <p>We sent a code to your email. Please enter the code below to confirm your email address.</p>
                     </div> 
                     <div class="card-body">
-                        <?php if (!empty($message)) echo $message; ?>
+                        <?php if (!empty($message)) echo '<div id="message" class="alert ' . (strpos($message, 'successfully') !== false ? 'alert-success' : 'alert-danger') . '" role="alert">' . $message . '</div>'; ?>
                         <form action="verifyEmail.php" method="POST">
                             <div class="form-group">
                                 <input type="text" id="otp" name="otp" class="form-control" required placeholder="Enter verification code">
@@ -148,5 +148,17 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.com/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrap.com/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Check if there is a message to display
+        window.onload = function() {
+            var messageElement = document.getElementById('message');
+            if (messageElement) {
+                setTimeout(function() {
+                    window.location.href = 'index.php'; // Redirect after 500ms delay
+                }, 500); // Adjust delay time (in milliseconds) as needed
+            }
+        };
+    </script>
 </body>
 </html>
