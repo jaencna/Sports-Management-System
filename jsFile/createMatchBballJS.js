@@ -3,6 +3,7 @@ $(document).ready(function () {
     let team2SelectedAthletes = []; // Array for TEAM-2
     let generalSelectedAthletes = []; // Array for all selected athletes
     let currentTeam = 'TEAM-1'; // Default team
+    // ajslkd
 
     // Function to fetch and display athlete data
     function fetchAthletes(position) {
@@ -186,7 +187,7 @@ $(document).ready(function () {
 
     // Initial fetch for default view (show all athletes)
     fetchAthletes($('#positionSelect').val());
-    
+
     $('#createMatchBtn').on('click', function () {
         let matchName = $('#matchName').val().trim();
         let matchDateTime = $('#matchDateTime').val();
