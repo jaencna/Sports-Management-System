@@ -5,17 +5,18 @@ body {
 /* Main Content */
 #teamSelect {
     padding: 8px 12px;
-    font-size: 1.2em;
+    font-size: 12pt;
     font-weight: bold;
     color: #333;
     background-color: white;
-    border: 2px solid #333;
+    border: 1px solid #333;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: all 0.3s ease;
-    width: 100%;
+    width: 50%;
     text-align: center;
+    
 }
 
 #positionSelect {
@@ -227,6 +228,9 @@ c
     height: 5vh;
     width: 100%;
     color:white;
+    box-shadow: 0 2px 5px rgba(1, 1, 1, 0.2);
+    border-radius: 10px;
+    
 }
 
 .modal-dialog.wider-modal-dialog {
@@ -237,6 +241,7 @@ c
 .modal {
 
     z-index: 1000000;
+    
 }
 
 .teamOneContainer, .teamTwoContainer {
@@ -275,5 +280,6 @@ c
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    
 }
 

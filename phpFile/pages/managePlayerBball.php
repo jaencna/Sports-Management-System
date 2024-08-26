@@ -32,7 +32,7 @@
             background-color: darkslategray;
             display: flex;
             height: 100vh;
-            font-family: georgia;
+            font-family: Helvetica;
         }
 
         /* Profile Image Styles */
@@ -44,11 +44,11 @@
         }
 
         #profileImage {
-            width: 50px;
+            width: 60px;
             /* Adjust size as needed */
-            height: 50px;
+            height: 60px;
             /* Ensure it is a square */
-            border-radius: 10%;
+            border-radius: 20px;
             /* Optional: makes the image round */
             object-fit: cover;
             /* Ensures the image covers the area */
@@ -219,7 +219,7 @@
             <a href="rangking.php" class="loading-link"><i class="fa-solid fa-ranking-star"></i>Rankings</a>              
         </div>
        <hr style="width: 100vh; font-weight:bold;">
-        <a href="#" class="loading-link"><i class="fas fa-envelope mr-2"></i>Contact</a>
+        <a href="contacts.php" class="loading-link"><i class="fas fa-envelope mr-2"></i>Contact</a>
         <a href="../buttonFunction/logOutButton.php" class="loading-link"><i class="fa-solid fa-right-from-bracket"></i>Log Out</a>
 
     </div>
@@ -239,15 +239,17 @@
             </div>
         </div> -->
 
-        <div class="row bottom-drop">
-                <select id="positionSelect">
+        <div class="row bottom-drop" style="margin-top:15px;width:93%">
+            <div class="col-sm-5" style="padding-top:10px;font-size:20pt;font-family:helvetica;font-weight:bold;">Player Management</div>
+            <div class="col-sm-7">
+                <select id="positionSelect" style="margin-top:15px; margin-left: 65%;">
                     <option value="--">Manage Player</option>
                     <option>POINT GUARD</option>
                     <option>SHOOTING GUARD</option>
                     <option>FORWARD</option>
                     <option>CENTER</option>
                 </select>
-
+            </div>
         </div>
         <div class="row bottom-main">
             <div class="col-md-12">
