@@ -196,6 +196,8 @@ $(document).ready(function () {
     
         if (matchName === "") {
             alert("Match Name cannot be empty!");
+        } else if (team1SelectedAthletes === "" || team1SelectedAthletes === "") {
+            alert("Please Select a Player!");
         } else {
             $.ajax({
                 url: '../buttonFunction/createMatchButton.php',
@@ -212,7 +214,18 @@ $(document).ready(function () {
                     let result = JSON.parse(response);
                     if (result.status === 'success') {
                         alert('Match created successfully!');
+                        team1SelectedAthletes = [];
+                        team2SelectedAthletes = [];
+                        generalSelectedAthletes = [];
+                        
+                        // Clear selected athletes from the UI
+                        $('#selectedAthletes').empty();
+                        $('#teamOneContainer').empty();
+                        $('#teamTwoContainer').empty();
+
+                        fetchAthletes("--");
                         $('#createMatchModal').modal('hide'); // Hide the modal
+                        
                         // Optionally, you can reload the page or update some UI elements
                     } else {
                         alert('Error creating match: ' + result.message);
