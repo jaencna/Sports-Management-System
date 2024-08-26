@@ -113,6 +113,7 @@
                 <i class="bi bi-exclamation-circle-fill"></i>
             </div>
 					</p>
+          <p class="fw-bold">Sports & Position:</p>
           <div class="container">
               <p class="login-sport inputs">
                   <select id="sportInput" name="athSport" class="form-control">
