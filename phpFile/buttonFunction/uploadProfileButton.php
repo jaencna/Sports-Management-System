@@ -20,9 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 } elseif (isset($_SESSION['coach_email'])) {
                     $userRole = 'coach';
                     $userEmail = $_SESSION['coach_email'];
-                } elseif (isset($_SESSION['athlete_email'])) {
+                } elseif (isset($_SESSION['ath_email'])) {
                     $userRole = 'athlete';
-                    $userEmail = $_SESSION['athlete_email'];
+                    $userEmail = $_SESSION['ath_email'];
                 } else {
                     echo 'User role not found';
                     exit;
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 } elseif ($userRole === 'coach') {
                     $stmt = $conn->prepare("UPDATE coach_tbl SET coach_img = ? WHERE coach_email = ?");
                 } elseif ($userRole === 'athlete') {
-                    $stmt = $conn->prepare("UPDATE athlete_tbl SET athlete_img = ? WHERE athlete_email = ?");
+                    $stmt = $conn->prepare("UPDATE athlete_tbl SET ath_img = ? WHERE ath_email = ?");
                 }
 
                 $stmt->bind_param("ss", $fileName, $userEmail);
