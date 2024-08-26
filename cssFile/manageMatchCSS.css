@@ -1,5 +1,5 @@
 .firstRow {
-    height: 60vh;
+    height: 70vh;
     margin-left: 0;
     width: 100%;
 
@@ -14,7 +14,7 @@
 }
 
 .matchFetch {
-    height: 55vh;
+    height: 65vh;
     padding: 20px;
     
 }
@@ -22,13 +22,13 @@
 .showFetch {
     background-color: red;
     padding: 20px;
-    height: 55vh;
+    height: 65vh;
     border-radius: 20px;
     
 }
 
 
-.showFetchHere {
+#showFetchHere {
     background-color: rgb(84, 55, 55);
     padding: 10px;
     height: 100%;
@@ -38,5 +38,131 @@
 
 .matchResult {
     background-color: black;
+    height: 65vh;
+    padding: 20px;
+    
+}
+
+.showResult {
+    background-color: red;
+    padding: 20px;
+    height: 65vh;
+    border-radius: 20px;
+    
+}
+
+
+#showResultHereTeam1 {
+    background-color: rgb(84, 55, 55);
+    padding: 10px;
+    height: 48%;
+    overflow: auto;
+    margin-bottom: 20px;
+    
+}
+
+#showResultHereTeam2 {
+    background-color: rgb(84, 55, 55);
+    padding: 10px;
+    height: 48%;
+    overflow: auto;
+    
+}
+
+
+.card-title {
+    font-size: 1.5rem;
+}
+
+.card-text {
+    font-size: 1rem;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    height: 25vh;
+}
+
+.card-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.team-info {
+    flex: 1;
+}
+
+.team-name {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.team-score {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.match-info {
+    flex: 2;
+    text-align: center;
+}
+
+.match-name {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.vs {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.quarterGet {
+    padding: 20px;
+    background-color: red;
+}
+
+.showGet {
+    height: 130vh;
+    background-color: pink;
+    padding: 10px;
+}
+
+#selectQuarter {
+    height: 8vh;
+    text-align: center;
+    padding: 5px;
+    
+
+}
+
+#showGetHereTeam1{
+    height: 55vh;
+    background-color: blue;
+    margin-bottom: 20px;
+    overflow: auto;
+}
+
+#showGetHereTeam2{
+    height: 55vh;
+    background-color: blue;
+    margin-bottom: 20px;
+    overflow: auto;
+}
+
+.spacing {
+    height: 5vh;
+    background-color: pink;
+    text-align: center;
+    padding: 5px;
+}
+
+#quarterSelect {
+    height: 50%;
+    width: 50vh;
+    text-align: center;
     
 }

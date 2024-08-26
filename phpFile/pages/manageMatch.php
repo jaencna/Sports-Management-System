@@ -231,36 +231,95 @@
         <div class="firstRow row">
             <div class="col-md-6 matchFetch">
                 <div class="showFetch">
-                    <div class="showFetchHere">
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        
+                    <div id="showFetchHere">
+                        <!-- Match cards will be injected here -->
                     </div>
                 </div>
             </div>
             <div class="col-md-6 matchResult">
-
+                <div class="showResult">
+                    <div id="showResultHereTeam1" class="row">
+                        <!-- Team 1 results will be injected here -->
+                    </div>
+                    <div id="showResultHereTeam2" class="row">
+                        <!-- Team 2 results will be injected here -->
+                    </div>
+                </div>
             </div>
         </div>
         <div class="secondRow row">
-            
+        <div class="col-md-12 quarterGet">
+                <div class="showGet">
+                    <div id="selectQuarter">
+                        <select id="quarterSelect">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                        <h3>TEAM 1</h3>
+                    </div>
+                    <div id="showGetHereTeam1">
+                        <!-- Table structure with headers will be added here -->
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>2-FGM</th>
+                                    <th>3-FGM</th>
+                                    <th>FT-FGM</th>
+                                    <th>2-FGA</th>
+                                    <th>3-FGA</th>
+                                    <th>FT-FGA</th>
+                                    <th>Assists</th>
+                                    <th>Blocks</th>
+                                    <th>Steals</th>
+                                    <th>Of. Reb</th>
+                                    <th>Def. Reb</th>
+                                    <th>Turn Over</th>
+                                    <th>Fouls</th>
+                                </tr>
+                            </thead>
+                            <tbody id="team1QuarterData">
+                                <!-- Rows will be injected here -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="spacing">
+                        <h3>TEAM 2</h3>
+                    </div>
+                    <div id="showGetHereTeam2">
+                        <!-- Table structure with headers will be added here -->
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>2-FGM</th>
+                                    <th>3-FGM</th>
+                                    <th>FT-FGM</th>
+                                    <th>2-FGA</th>
+                                    <th>3-FGA</th>
+                                    <th>FT-FGA</th>
+                                    <th>Assists</th>
+                                    <th>Blocks</th>
+                                    <th>Steals</th>
+                                    <th>Of. Reb</th>
+                                    <th>Def. Reb</th>
+                                    <th>Turn Over</th>
+                                    <th>Fouls</th>
+                                </tr>
+                            </thead>
+                            <tbody id="team2QuarterData">
+                                <!-- Rows will be injected here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
+
 
 
 
@@ -283,7 +342,7 @@
     <!-- AJAX link -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="../../jsFile/createMatchBballJS.js"></script>
+    <script src="../../jsFile/manageMatchJS.js"></script>
     <script>
     // JS for the loading page
     function showLoadingScreen() {
