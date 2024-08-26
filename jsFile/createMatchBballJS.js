@@ -196,6 +196,8 @@ $(document).ready(function () {
     
         if (matchName === "") {
             alert("Match Name cannot be empty!");
+        } else if (matchDateTime === "") {
+            alert("Please select a Match Date & Time!");
         } else if (team1SelectedAthletes.length === 0 || team2SelectedAthletes.length === 0) {
             alert("Please Select a Player!");
         } else {
