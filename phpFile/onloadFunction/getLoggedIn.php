@@ -23,6 +23,8 @@ if (isset($_SESSION['ath_email'])) {
     }
 }
 
+else
+
 if (isset($_SESSION['coach_email'])) {
     // Fetch the coach's email from the session
     $loggedInUserEmail = $_SESSION['coach_email'];
@@ -42,6 +44,8 @@ if (isset($_SESSION['coach_email'])) {
         exit();
     }
 }
+
+else
 
 // Check if a coach is logged in
 if (isset($_SESSION['admin_email'])) {
