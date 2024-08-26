@@ -20,7 +20,7 @@
 }
 
 .showFetch {
-    background-color: red;
+    background-color: white;
     padding: 20px;
     height: 65vh;
     border-radius: 20px;
@@ -29,7 +29,7 @@
 
 
 #showFetchHere {
-    background-color: rgb(84, 55, 55);
+    background-color: lightgray;
     padding: 10px;
     height: 100%;
     overflow: auto;
@@ -37,14 +37,14 @@
 }
 
 .matchResult {
-    background-color: black;
+   
     height: 65vh;
     padding: 20px;
     
 }
 
 .showResult {
-    background-color: red;
+    background-color: white;
     padding: 20px;
     height: 65vh;
     border-radius: 20px;
@@ -53,7 +53,7 @@
 
 
 #showResultHereTeam1 {
-    background-color: rgb(84, 55, 55);
+    background-color: lightgray;
     padding: 10px;
     height: 48%;
     overflow: auto;
@@ -62,7 +62,7 @@
 }
 
 #showResultHereTeam2 {
-    background-color: rgb(84, 55, 55);
+    background-color: lightgray;
     padding: 10px;
     height: 48%;
     overflow: auto;
@@ -122,12 +122,14 @@
 
 .quarterGet {
     padding: 20px;
-    background-color: red;
+    background-color: white;
 }
 
 .showGet {
     height: 130vh;
-    background-color: pink;
+    background-color: white;
+    border-width: 1px;
+    border-color: gray;
     padding: 10px;
 }
 
@@ -140,22 +142,24 @@
 }
 
 #showGetHereTeam1{
+    margin-top: 20px;
     height: 55vh;
-    background-color: blue;
+    background-color: lightgray;
     margin-bottom: 20px;
     overflow: auto;
 }
 
 #showGetHereTeam2{
+    margin-top: 20px;
     height: 55vh;
-    background-color: blue;
+    background-color: lightgray;
     margin-bottom: 20px;
     overflow: auto;
 }
 
 .spacing {
     height: 5vh;
-    background-color: pink;
+    background-color: white;
     text-align: center;
     padding: 5px;
 }

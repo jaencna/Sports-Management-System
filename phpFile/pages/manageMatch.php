@@ -316,8 +316,11 @@
                     </div>
                 </div>
             </div>
+        </div>
+        </div>
 
         </div>
+        <button id="finalizeMatchButton" class="btn btn-success">FINALIZE MATCH</button>
     </div>
 
 

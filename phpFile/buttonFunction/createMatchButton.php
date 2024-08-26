@@ -8,10 +8,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $matchEnd = "YYYY-MM-DD HH:MI:SS";
     $team1 = "TEAM 1"; // Fixed team name
     $team2 = "TEAM 2"; // Fixed team name
+    $status = "pending";
     
     // Prepare the SQL statement to insert into basketball_game_result
-    $stmt = $conn->prepare("INSERT INTO basketball_game_result (match_name, team_1, team_2, team_1_score, team_2_score, match_win, match_lose, match_date_time) VALUES (?, ?, ?, 0, 0, '--', '--', ?)");
-    $stmt->bind_param('ssss', $matchName, $team1, $team2, $matchEnd);
+    $stmt = $conn->prepare("INSERT INTO basketball_game_result (match_name, team_1, team_2, team_1_score, team_2_score, match_win, match_lose, match_date_time, STATUS) VALUES (?, ?, ?, 0, 0, '--', '--', ?, ?)");
+    $stmt->bind_param('sssss', $matchName, $team1, $team2, $matchEnd, $status);
 
     // Execute the statement
     if ($stmt->execute()) {

@@ -287,7 +287,7 @@ $(document).ready(function () {
     function handleEditableSportDoubleClick() {
         let currentElement = $(this);
         let currentValue = currentElement.text();
-        let dropdown = $('<select>', { class: 'form-control' });
+        let dropdown = $('<select>', { class: 'form-control' });    
 
         sportsData.forEach(function (sport) {
             let option = $('<option>', { value: sport, text: sport });
