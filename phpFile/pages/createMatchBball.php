@@ -226,34 +226,6 @@
 
     <!-- Improved HTML Structure -->
     <div id="main">
-
-        <!-- <div id="topSection">
-            <div id="fixedSection">
-                <select id="teamSelect">
-                    <option>TEAM-1</option>
-                    <option>TEAM-2</option>
-                </select>
-            </div>
-            
-        </div>
-
-        <div id="bottomSection">
-            <div id="fixedBottomSection">
-                <select id="positionSelect">
-                    <option value="--">-- SELECT POSITION --</option>
-                    <option>POINT GUARD</option>
-                    <option>SHOOTING GUARD</option>
-                    <option>FORWARD</option>
-                    <option>CENTER</option>
-                </select>
-            </div>
-
-            <div class="content">
-                
-                <div id="athleteCardContainer"></div>
-            </div>
-        </div> -->
-
         <div class="row top-drop">
             <select id="teamSelect">
                 <option>TEAM-1</option>
@@ -282,7 +254,63 @@
                 <div id="athleteCardContainer"></div>
             </div>
         </div>
+
+        <button id="createMatchOpenModal" type="button" class="btn btn-sucess">Create Match</button>
     </div>
+    
+
+    <div class="modal fade" id="createMatchModal" tabindex="-1" role="dialog" aria-labelledby="createMatchModal" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document"> 
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title">Create Match</h5>
+                    <div class="ms-auto d-flex">
+                        <!-- Match Name Input -->
+                        <div class="me-3">
+                            <label for="matchName" class="form-label">Match Name:</label>
+                            <input type="text" id="matchName" class="form-control" style="width: 250px;">
+                        </div>
+                        <!-- Match Date & Time Input -->
+                        <div>
+                            <label for="matchDateTime" class="form-label">Match Date & Time:</label>
+                            <input type="datetime-local" id="matchDateTime" class="form-control" style="width: 250px;">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1>TEAM 1</h1>
+                            <div class="teamOneContainer d-flex flex-wrap justify-content-center" id="teamOneContainer"></div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-md-12">
+                            <h1>TEAM 2</h1>
+                            <div class="teamTwoContainer d-flex flex-wrap justify-content-center" id="teamTwoContainer"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <div class="d-flex justify-content-between w-100">
+                        <div>
+                            <button type="button" class="btn btn-success mr-2" id="createMatchBtn" style="width: 20vh;">CREATE MATCH</button>
+                        </div>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
 
 
     <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">

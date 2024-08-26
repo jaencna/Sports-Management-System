@@ -32,8 +32,8 @@ $(document).ready(function () {
                                     <h6 class="card-title">${athlete.ath_first} ${athlete.ath_last}</h6>
                                     <p class="card-text">${athlete.ath_position}</p>
                                     <div class="athlete-info">
-                                        <p class="card-text"><strong>Height:</strong> ${athlete.ath_height} CM</p>
-                                        <p class="card-text"><strong>Weight:</strong> ${athlete.ath_weight} KG</p>
+                                        <p class="card-text"><strong> ${athlete.ath_height} CM</strong></p>
+                                        <p class="card-text"><strong>${athlete.ath_weight} KG</strong></p>
                                     </div>
                                 </div>
                             </div>
@@ -46,6 +46,7 @@ $(document).ready(function () {
     
                 // Bind events after updating the cards
                 $('.athlete-card').on('click', updateSelectedAthletes);
+             
             },
             error: function (xhr, status, error) {
                 console.error("Error fetching athletes data: ", error);
@@ -103,8 +104,6 @@ $(document).ready(function () {
         selectedAthletesArray.forEach(email => {
             let athlete = $('.athlete-card[data-email="' + email + '"]');
 
-            // selectedAthletes.push(`<span class="selected-athlete-item" data-name="${athlete.data('name')}" data-sport="${athlete.data('sport')}">${athlete.data('name')} (${athlete.data('sport')})</span>`);
-
             selectedAthletes.push(`<div class="selected-athlete-item" data-name="${athlete.data('name')}" data-sport="${athlete.data('sport')}"">
                             <div class="card">
                                 <img src="../../images/profile/${athlete.data('image')}" class="card-img-top" alt="${athlete.data('name')}">
@@ -112,22 +111,61 @@ $(document).ready(function () {
                                     <h6 class="card-title">${athlete.data('name')}</h6>
                                     <p class="card-text">${athlete.data('position')}</p>
                                     <div class="athlete-info">
-                                        <p class="card-text"><strong>Height:</strong> ${athlete.data('height')} CM</p>
-                                        <p class="card-text"><strong>Weight:</strong> ${athlete.data('weight')} KG</p>
+                                        <p class="card-text"><strong> ${athlete.data('height')} CM</strong></p>
+                                        <p class="card-text"><strong> ${athlete.data('weight')} KG</strong></p>
                                     </div>
                                 </div>
                             </div>
                         </div>`);
-
         });
 
         $('#selectedAthletes').html(selectedAthletes.length > 0 ? selectedAthletes.join(' ') : '');
     }
 
+    function displayTeamsInModal() {
+        let teamOneHtml = team1SelectedAthletes.map(email => {
+            let athlete = $(`.athlete-card[data-email="${email}"]`);
+            return `
+                <div class="card team-one-card" style="max-width: 150px;">
+                    <img src="../../images/profile/${athlete.data('image')}" class="card-img-top" alt="${athlete.data('name')}">
+                    <div class="card-body p-2">
+                        <h6 class="card-title">${athlete.data('name')}</h6>
+                        <p class="card-text">${athlete.data('position')}</p>
+                        <div class="athlete-info">
+                            <p class="card-text"><strong> ${athlete.data('height')} CM</strong></p>
+                            <p class="card-text"><strong>${athlete.data('weight')} KG</strong></p>
+                        </div>
+                    </div>
+                </div>`;
+        }).join('');
+        
+        let teamTwoHtml = team2SelectedAthletes.map(email => {
+            let athlete = $(`.athlete-card[data-email="${email}"]`);
+            return `
+                <div class="card team-two-card" style="max-width: 150px;">
+                    <img src="../../images/profile/${athlete.data('image')}" class="card-img-top" alt="${athlete.data('name')}">
+                    <div class="card-body p-2">
+                        <h6 class="card-title">${athlete.data('name')}</h6>
+                        <p class="card-text">${athlete.data('position')}</p>
+                        <div class="athlete-info">
+                            <p class="card-text"><strong> ${athlete.data('height')} CM</strong></p>
+                            <p class="card-text"><strong>${athlete.data('weight')} KG</strong></p>
+                        </div>
+                    </div>
+                </div>`;
+        }).join('');
+        
+        $('#teamOneContainer').html(teamOneHtml);
+        $('#teamTwoContainer').html(teamTwoHtml);
+    }
+    
+    
+
     $(document).on('click', '.selected-athlete-item', function () {
         let athleteName = $(this).data('name');
         let athleteSport = $(this).data('sport');
         $(`.athlete-card[data-name="${athleteName}"][data-sport="${athleteSport}"]`).trigger('click');
+        $(`.athlete-cards[data-name="${athleteName}"][data-sport="${athleteSport}"]`).trigger('click');
     });
 
     $('#teamSelect').on('change', function () {
@@ -141,6 +179,50 @@ $(document).ready(function () {
         fetchAthletes(selectedPosition);
     });
 
+    $('#createMatchOpenModal').on('click', function () {
+        displayTeamsInModal(); // Call the function to display teams in the modal
+        $('#createMatchModal').modal('show');
+    });
+
     // Initial fetch for default view (show all athletes)
     fetchAthletes($('#positionSelect').val());
+    
+    $('#createMatchBtn').on('click', function () {
+        let matchName = $('#matchName').val().trim();
+        let matchDateTime = $('#matchDateTime').val();
+        let team1 = "TEAM 1"; // Fixed team name
+        let team2 = "TEAM 2"; // Fixed team name
+    
+        if (matchName === "") {
+            alert("Match Name cannot be empty!");
+        } else {
+            $.ajax({
+                url: '../buttonFunction/createMatchButton.php',
+                type: 'POST',
+                data: {
+                    matchName: matchName,
+                    matchDateTime: matchDateTime,
+                    team1: team1,
+                    team2: team2,
+                    team1SelectedAthletes: team1SelectedAthletes,
+                    team2SelectedAthletes: team2SelectedAthletes
+                },
+                success: function (response) {
+                    let result = JSON.parse(response);
+                    if (result.status === 'success') {
+                        alert('Match created successfully!');
+                        $('#createMatchModal').modal('hide'); // Hide the modal
+                        // Optionally, you can reload the page or update some UI elements
+                    } else {
+                        alert('Error creating match: ' + result.message);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error("Error creating match: ", error);
+                }
+            });
+        }
+    });
+    
+    
 });

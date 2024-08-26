@@ -219,4 +219,59 @@ c
     border: 2px solid #ccc; /* Optional: Add a border to indicate disabled state */
 }
 
+#createMatchOpenModal {
 
+    bottom: 0;
+    z-index: 1000;
+    background-color: green;
+    height: 5vh;
+    width: 100%;
+}
+
+.modal-dialog.wider-modal-dialog {
+    max-width: 90%; /* Adjust the width as needed */
+    z-index: 12200000;
+}
+
+.modal {
+
+    z-index: 1000000;
+}
+
+.teamOneContainer, .teamTwoContainer {
+    height: 30vh;
+    width: 100%;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+
+
+
+
+#teamOneContainer,
+#teamTwoContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Optional: Adjust spacing between cards */
+}
+
+.team-one-card {
+    /* Custom styles for TEAM-1 cards */
+    border: 2px solid blue; /* Example: Blue border for TEAM-1 */
+    margin-top: 10px;
+}
+
+.team-two-card {
+    /* Custom styles for TEAM-2 cards */
+    border: 2px solid green; /* Example: Green border for TEAM-2 */
+}
+
+.modal-body .teamOneContainer,
+.modal-body .teamTwoContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
