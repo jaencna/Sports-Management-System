@@ -193,7 +193,7 @@
     
 
 </head>
-<body>
+<body style="font-family: Arial, Helvetica, sans-serif;">
 <div id="loadingScreen" style="display: none;">
         <img src="../../images/loadingAnimation.gif" alt="Loading...">
     </div>
@@ -221,29 +221,29 @@
             <a href="rangking.php" class="loading-link"><i class="fa-solid fa-ranking-star"></i>Rankings</a>              
         </div>
        <hr style="width: 100vh; font-weight:bold;">
-        <a href="#" class="loading-link"><i class="fas fa-envelope mr-2"></i>Contact</a>
+        <a href="contacts.php" class="loading-link"><i class="fas fa-envelope mr-2"></i>Contact</a>
         <a href="../buttonFunction/logOutButton.php" class="loading-link"><i class="fa-solid fa-right-from-bracket"></i>Log Out</a>
 
     </div>
 
     <!-- Improved HTML Structure -->
-    <div id="main">
-        <div class="row top-drop">
-            <select id="teamSelect">
+    <div id="main" style="padding:50px;">
+        <div class="row top-drop" style="border-radius:20px 20px 0px 0px;" >
+            <select id="teamSelect" style="border-radius:20px 20px 20px 20px;">
                 <option>TEAM-1</option>
                 <option>TEAM-2</option>
             </select>
             
         </div>
-        <div class="row top-main">
+        <div class="row top-main" style="border-radius:0px 0px 20px 20px;">
             <div id="selectedAthletes">
             
             </div>
         </div>
 
         <div class="row bottom-drop">
-                <select id="positionSelect">
-                    <option value="--">-- SELECT POSITION --</option>
+                <select id="positionSelect" >
+                    <option value="--"> SELECT POSITION </option>
                     <option>POINT GUARD</option>
                     <option>SHOOTING GUARD</option>
                     <option>FORWARD</option>

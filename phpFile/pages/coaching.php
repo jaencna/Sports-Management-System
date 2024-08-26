@@ -219,7 +219,7 @@
             <a href="rangking.php" class="loading-link"><i class="fa-solid fa-ranking-star"></i>Rankings</a>              
         </div>
        <hr style="width: 100vh; font-weight:bold;">
-        <a href="#" class="loading-link"><i class="fas fa-envelope mr-2"></i>Contact</a>
+        <a href="contacts.php" class="loading-link"><i class="fas fa-envelope mr-2"></i>Contact</a>
         <a href="../buttonFunction/logOutButton.php" class="loading-link"><i class="fa-solid fa-right-from-bracket"></i>Log Out</a>
 
     </div>

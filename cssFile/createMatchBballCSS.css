@@ -1,3 +1,7 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 /* Main Content */
 #teamSelect {
     padding: 8px 12px;
@@ -31,16 +35,20 @@
 
 .top-drop {
     height: 7vh;
-    width: 100%;
-    background-color: rgba(187, 187, 187, 0.596);
+    width: 50px;
+    background-color: rgb(255, 255, 255);
     margin-left: 0px;
-    padding: 5px;;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 7px 6px rgb(0, 0, 0);
+
 }
 
 .top-main {
     height: 45vh;
-    width: 100%;
-    background-color: rgba(187, 187, 187, 0.596);
+    width: 10px;
+    background-color: rgba(255, 255, 255, 0.527);
     margin-left: 0px;
     overflow-y: auto;
   
@@ -62,6 +70,8 @@
     margin-left: 0px;
     overflow-y: auto;
     padding-top: 5vh;
+    background-color: white;
+    border-radius: 20px;
 }
 
  #selectedAthletes{
@@ -201,10 +211,12 @@ c
     opacity: 0.5; /* Make the card look disabled */
     pointer-events: none; /* Disable clicks */
     cursor: not-allowed; /* Change cursor to indicate no action */
+    border-radius: 10px;
 }
 
 .athlete-card.disabled .custom-card {
     border: 2px solid #ccc; /* Optional: Add a border to indicate disabled state */
+    border-radius: 10px;
 }
 
 #createMatchOpenModal {
@@ -214,6 +226,7 @@ c
     background-color: green;
     height: 5vh;
     width: 100%;
+    color:white;
 }
 
 .modal-dialog.wider-modal-dialog {
@@ -263,3 +276,4 @@ c
     flex-wrap: wrap;
     justify-content: center;
 }
+

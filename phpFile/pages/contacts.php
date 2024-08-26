@@ -234,7 +234,8 @@
         <hr style="width: 100vh; font-weight:bold;">
         <div class="teamManager" style="height: 33vh;">
             <a href="manageTeam.php" class="loading-link" title="Manage Team"><i class="fa-solid fa-people-group"></i>Manage Team</a>
-            <a href="createMatch.php" class="loading-link"><i class="fa-solid fa-basketball"></i>Create Match</a>  
+            <a href="managePlayerBball.php" class="loading-link"><i class="fa-solid fa-users"></i></i>Manage Players</a>
+            <a href="createMatchBball.php" class="loading-link"><i class="fa-solid fa-basketball"></i>Create Match</a>  
             <a href="rangking.php" class="loading-link"><i class="fa-solid fa-ranking-star"></i>Rankings</a>
             <a href="rangking.php" class="loading-link"><i class="fa-solid fa-ranking-star"></i>Rankings</a>
             <a href="rangking.php" class="loading-link"><i class="fa-solid fa-ranking-star"></i>Rankings</a>              
