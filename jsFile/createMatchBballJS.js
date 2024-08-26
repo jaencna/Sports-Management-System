@@ -196,7 +196,7 @@ $(document).ready(function () {
     
         if (matchName === "") {
             alert("Match Name cannot be empty!");
-        } else if (team1SelectedAthletes === "" || team1SelectedAthletes === "") {
+        } else if (team1SelectedAthletes.length === 0 || team2SelectedAthletes.length === 0) {
             alert("Please Select a Player!");
         } else {
             $.ajax({
