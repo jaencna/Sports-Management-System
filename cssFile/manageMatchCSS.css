@@ -1,0 +1,42 @@
+.firstRow {
+    height: 60vh;
+    margin-left: 0;
+    width: 100%;
+
+    
+}
+
+.secondRow {
+    height: 100vh;
+    margin-left: 0;
+    width: 100%;
+    background-color: rgb(26, 57, 78, .6);
+}
+
+.matchFetch {
+    height: 55vh;
+    padding: 20px;
+    
+}
+
+.showFetch {
+    background-color: red;
+    padding: 20px;
+    height: 55vh;
+    border-radius: 20px;
+    
+}
+
+
+.showFetchHere {
+    background-color: rgb(84, 55, 55);
+    padding: 10px;
+    height: 100%;
+    overflow: auto;
+    
+}
+
+.matchResult {
+    background-color: black;
+    
+}

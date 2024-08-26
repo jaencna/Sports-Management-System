@@ -33,6 +33,7 @@
             display: flex;
             height: 100vh;
             font-family: georgia;
+            
         }
 
         /* Profile Image Styles */

@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
     <!-- Page CSS and JS -->
-    <link rel="stylesheet" href="../../cssFile/createMatchBballCSS.css">
+    <link rel="stylesheet" href="../../cssFile/manageMatchCSS.css">
 
     <style>
         * {
@@ -134,17 +134,18 @@
 
         /* Main Content */
         #main {
-            display: flex;
-            flex-direction: column;
-            margin-left: 80px; /* Space for sidebar */
             background-color: black;
             background-image: url('../../images/homepage/TERRAFORM.png');
+            margin-left: 80px;
+            /* Space for sidebar */
             transition: margin-left .3s;
-            background-size: cover;
-            position: relative; /* Keeps it in the flow of the document */
-            overflow: hidden; /* Prevent overflow affecting layout */
+            /* Smooth transition for content shift */
+            position: relative;
+            /* Keeps it in the flow of the document */
+            overflow: auto;
+            /* Prevent overflow affecting layout */
+            
             width: 100%;
-            height: 100vh; /* Ensures the full height is utilized */
         }
 
         #imageModal{
@@ -227,7 +228,38 @@
 
     <!-- Improved HTML Structure -->
     <div id="main">
-        
+        <div class="firstRow row">
+            <div class="col-md-6 matchFetch">
+                <div class="showFetch">
+                    <div class="showFetchHere">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 matchResult">
+
+            </div>
+        </div>
+        <div class="secondRow row">
+            
+        </div>
     </div>
 
 
