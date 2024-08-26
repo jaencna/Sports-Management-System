@@ -143,9 +143,10 @@
             transition: margin-left .3s;
             background-size: cover;
             position: relative; /* Keeps it in the flow of the document */
-            overflow: hidden; /* Prevent overflow affecting layout */
+            overflow: auto; /* Prevent overflow affecting layout */
             width: 100%;
             height: 100vh; /* Ensures the full height is utilized */
+            padding-top:70px;
         }
 
         #imageModal{
@@ -188,6 +189,35 @@
             color:gray;
             
         }
+
+            /* Add this CSS to your existing style block */
+
+        .table {
+            border-collapse: separate; /* Ensure that border-radius works correctly */
+            border-spacing: 0; /* Remove spacing between cells */
+            border-radius: 10px; /* Adjust the radius as needed */
+            overflow: hidden; /* Ensure corners are clipped properly */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .table thead th {
+            border-top-left-radius: 0px; /* Rounded top-left corner */
+            border-top-right-radius: 0px; /* Rounded top-right corner */
+        }
+
+        .table tfoot th, .table tfoot td {
+            border-bottom-left-radius: 20px; /* Rounded bottom-left corner */
+            border-bottom-right-radius: 20px; /* Rounded bottom-right corner */
+        }
+
+        .table tbody tr:last-child td:first-child {
+            border-bottom-left-radius: 20px; /* Rounded bottom-left corner of the first cell in the last row */
+        }
+
+        .table tbody tr:last-child td:last-child {
+            border-bottom-right-radius: 20px; /* Rounded bottom-right corner of the last cell in the last row */
+        }
+
     </style>
 
     
@@ -215,8 +245,8 @@
         <hr style="width: 100vh; font-weight:bold;">
         <div class="teamManager" style="height: 33vh;">
             <a href="athleteHistory.php" class="loading-link" title="Manage Team"><i class="fa-solid fa-people-group active"></i>History</a>
-            <a href="" class="loading-link"><i class="fa-solid fa-users"></i></i>Manage Players</a>
-            <a href="" class="loading-link"><i class="fa-solid fa-basketball"></i>Create Match</a>  
+            <a href="managePlayerBball.php" class="loading-link"><i class="fa-solid fa-users"></i></i>Manage Players</a>
+            <a href="createMatchBball.php" class="loading-link"><i class="fa-solid fa-basketball"></i>Create Match</a>  
             <a href="" class="loading-link"><i class="fa-solid fa-table-columns"></i></i>Manage Match</a>
             <a href="" class="loading-link"><i class="fa-solid fa-ranking-star"></i>Rankings</a>              
         </div>
@@ -226,27 +256,28 @@
 
     </div>
 
-    <div id="main" style="background-color: black; height: 2419px; background-image: url('../../images/homepage/TERRAFORM.png');background-size: cover; background-position: center; height: 100vh; background-repeat: no-repeat;overflow-x: hidden; padding-top:20vh;">
+    <div id="main" style="background-color: black; height: 2419px; background-image: url('../../images/homepage/TERRAFORM.png');background-size: cover; background-position: center; height: 100vh; background-repeat: no-repeat;overflow-x: hidden;">
     <div class="container">
-    <h3 class="text-center mb-4 p-3 bg-white text-dark rounded">Match History</h3>
-        <table class="table table-bordered">
-            <thead>
-                <tr class="mb-4">
-                    <th>Match Name</th>
-                    <th>Total Points</th>
-                    <th>2 Points</th>
-                    <th>3 Points</th>
-                    <th>Free Throw</th>
-                    <th>FT Attempt</th>
-                    <th>Block</th>
-                    <th>Steal</th>
-                    <th>Foul</th>
-                </tr>
-            </thead>
-            <tbody id="statsTableBody">
-                <!-- Data will be inserted here by JavaScript -->
-            </tbody>
-        </table>
+    <h3 class="text-center mb-4 p-3 bg-white text-dark" style="border-radius:15px;font-weight:bold;">Match History</h3>
+    <table class="table table-bordered">
+    <thead>
+        <tr class="mb-4">
+            <th>Match Name</th>
+            <th>Total Points</th>
+            <th>2 Points</th>
+            <th>3 Points</th>
+            <th>Free Throw</th>
+            <th>FT Attempt</th>
+            <th>Block</th>
+            <th>Steal</th>
+            <th>Foul</th>
+        </tr>
+    </thead>
+    <tbody id="statsTableBody">
+        <!-- Data will be inserted here by JavaScript -->
+    </tbody>
+</table>
+
     </div>
 
     <script>

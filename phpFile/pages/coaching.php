@@ -32,7 +32,7 @@
             background-color: darkslategray;
             display: flex;
             height: 100vh;
-            font-family: georgia;
+            font-family: helvetica;
         }
 
         /* Profile Image Styles */
