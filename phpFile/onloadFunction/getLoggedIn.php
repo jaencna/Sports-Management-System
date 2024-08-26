@@ -3,11 +3,11 @@ session_start();
 include '../connection/connection.php';
 
 // Check if an athlete is logged in
-if (isset($_SESSION['athlete_email'])) {
+if (isset($_SESSION['ath_email'])) {
     // Fetch the athlete's email from the session
-    $loggedInUserEmail = $_SESSION['athlete_email'];
+    $loggedInUserEmail = $_SESSION['ath_email'];
     // Prepare and execute the SELECT query to fetch all data of the logged-in athlete
-    $stmt = $conn->prepare("SELECT * FROM athlete_tbl WHERE athlete_email = ?");
+    $stmt = $conn->prepare("SELECT * FROM athlete_tbl WHERE ath_email = ?");
     $stmt->bind_param("s", $loggedInUserEmail);
     $stmt->execute();
     $result = $stmt->get_result();
