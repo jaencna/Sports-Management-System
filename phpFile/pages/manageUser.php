@@ -198,9 +198,9 @@
 
         
         <a href="admin.php" class="loading-link" title="Home Page"><i class="fa-solid fa-house"></i>Home</a>
-        <a href="manageUser.php" class="loading-link" title="Manage Profiles"><i class="fa-solid fa-user active"></i>Profiles</a>
-        <a href="" class="loading-link"><i class="fa-solid fa-piggy-bank"></i>Salary</a>
-        <a href="#" class="loading-link"><i class="fas fa-envelope mr-2"></i>Contact</a>
+        <a href="manageUser.php" class="loading-link" title="Manage Profiles"><i class="fa-solid fa-user active"></i>Manage Users</a>
+        
+        <a href="adminContact.php" class="loading-link"><i class="fas fa-envelope mr-2"></i>Contacts</a>
         <a href="../buttonFunction/logOutButton.php" class="loading-link"><i class="fa-solid fa-right-from-bracket"></i>Log_Out</a>
     </div>
 

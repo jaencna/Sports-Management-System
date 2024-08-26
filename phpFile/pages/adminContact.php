@@ -1,9 +1,11 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
+    <title>Home Page</title>
 
     <!-- BS LINKS -->
     <!-- <link rel="stylesheet" href="../../bsCSS/bootstrap.css">
@@ -15,7 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
     <!-- Page CSS and JS -->
-    <link rel="stylesheet" href="../../cssFile/signUpCSS.css">
+    <link rel="stylesheet" href="../../cssFile/coachingCSS.css">
 
     <style>
         * {
@@ -74,7 +76,7 @@
         }
 
         .sidebar a {
-            padding: 30px 8px 8px 80px;
+            padding: 30px 8px 5px 80px;
             /* Adjust padding to make space for icons */
             text-decoration: none;
             font-size: 23px;
@@ -102,15 +104,16 @@
         .sidebar h1,
         .sidebar h2 {
             text-decoration: none;
-            color: white;
+            color: rgb(34, 34, 34);
             display: block;
             transition: 0.3s;
             margin-left:20px;
-            font-family: helvetica;
+            font-family:helvetica;
         }
 
         .sidebar h1 {
             font-size: 35px;
+            color: white;
         }
 
         .sidebar h2 {
@@ -139,7 +142,7 @@
             /* Smooth transition for content shift */
             position: relative;
             /* Keeps it in the flow of the document */
-            overflow: auto;
+            overflow: hidden;
             /* Prevent overflow affecting layout */
             padding: 30px;
             width: 100%;
@@ -180,6 +183,30 @@
         .activa {
             color:white;
         }
+
+        hr{
+            color:gray;
+            
+        }
+
+        body {
+            background-color: #121212;
+            height: 200vh;
+            margin: 0;
+            background-image: url('../../images/login/BGcross.png');
+            font-family: "helvetica";
+            color: white;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .img-rounded {
+            height: 500px;
+        }
+
+        .container-custom {
+            padding: 40px;
+        }
     </style>
 
     
@@ -203,111 +230,104 @@
         </div>
 
         
-        <a href="admin.php" class="loading-link activa" title="Home Page"><i class="fa-solid fa-house active"></i>Home</a>
+        <a href="admin.php" class="loading-link activa" title="Home Page"><i class="fa-solid fa-house "></i>Home</a>
         <a href="manageUser.php" class="loading-link" title="Manage Profiles"><i class="fa-solid fa-user"></i>Manage Users</a>
         
-        <a href="adminContact.php" class="loading-link"><i class="fas fa-envelope mr-2"></i>Contacts</a>
+        <a href="#" class="loading-link"><i class="fas fa-envelope mr-2 active"></i>Contact</a>
         <a href="../buttonFunction/logOutButton.php" class="loading-link"><i class="fa-solid fa-right-from-bracket"></i>Log_Out</a>
     </div>
 
-    <div id="main" style="background-color: black; height: 2419px; background-image: url('../../images/homepage/TERRAFORM.png');background-size: cover; background-position: center; height: 100vh; background-repeat: no-repeat;overflow-x: hidden; padding-top:20vh;">
+    <div id="main">
 
-      <div class = "row">
-        <div id="play" class = "col-sm-5" style="height: 150px; color: white; font-size: 90px; padding-top: 40px; padding-left: 100px; font-family: arial;"> <b> <p>Play.
-          Score.
-          Win.</p></b></div>
-        <div class = "col-sm-7" style="height: 150px;"> <img src="../../images/homepage/basketbolero.png" class="img-responsive;" style="max-width: 100%; height: auto;"></div>
-      </div>
-
-<!--About-->
-
-        <div style="background-image: url('../../images/homepage/BOTT_HOME.png');background-size: cover; margin-top: 420px;">
-          <div class="row" style="margin-top: 40px; padding-left: 50px;">
-            <div class="col-sm-5"><img src="../../images/homepage/LOGO_CIRCLE.png" class="img-responsive;" style="max-width: 100%; height: auto;"></div>
-            <div class="col-sm-7"><p style="font-size: 56pt;color: white; font-family: Arial, Helvetica, sans-serif; margin-top: 50px; padding-left: 100px;"> 
-              <b>About</b>
-              </p>
-              <p style="color: white; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding-left: 100px; font-size: 15pt; margin-right: 100px; text-align: justify; line-height: 1.2;">
-      This is the SportsManager Pro. Welcome! Our objective is to simplify and improve the efficiency of administering sports teams, events, and activities. <br><br>
-      Our platform gives clubs, educational institutions, sports leagues, and individual athletes the tools and resources they need to run their organizations
-      more efficiently. We believe that sports have the power to unite people and inspire greatness. Our goal is to help coaches and athletes by offering
-      a wide range of management tools. Whether you're in charge of a community event, a league, or a competitive team, our approach addresses your unique
-      challenges.<br><br>
-      
-      Our user-friendly platform facilitates clear communication, performance monitoring, and scheduling. Join us as we transform sports activity
-      management to improve efficiency and enjoyment for all.
-
-              </p>
-  
+    <div class="container-custom">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="mapouter" style="border-radius: 40px; overflow: hidden;">
+                <div class="gmap_canvas">
+                    <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=cvsu%20imus&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    <a href="https://123movies-i.net"></a><br>
+                    <style>
+                        .mapouter {
+                            position: relative;
+                            text-align: right;
+                            height: 500px;
+                            width: 600px;
+                            border-radius: 40px;
+                        }
+                    </style>
+                    <a href="https://www.embedgooglemap.net">embed google map</a>
+                    <style>
+                        .gmap_canvas {
+                            overflow: hidden;
+                            background: none!important;
+                            height: 500px;
+                            width: 600px;
+                        }
+                    </style>
+                </div>
             </div>
-    
-          </div>
-
-          <div class = "row">
-            <div class = "col-sm-6" style="height: 150px; padding-top: 10px; padding-left: 120px;"> 
-
-<!--Services-->
-
-              <b><p style="color: white; font-size: 56pt; ">Services</p></b>
-
-              <p style="color: white; font-size: 20px;  text-align: justify; line-height: 1.1;">
-                Our SportManager Pro offers comprehensive tools to streamline sports team operations and athlete
-                management. Key features includes</p>
-              
-<!--Scoring-->
-              <div class="row">
-
-                <div class="col-sm-5" style=" padding-top: 65px"><img src="../../images/homepage/scoring.png" class="img-responsive;" style="max-width: 100%; height: auto;"></div>
-
-                <div class="col-sm-7">
-                  <p style="color: white;font-family: Arial, Helvetica, sans-serif; font-size: 24pt; margin-top: 50px; padding-left: 50px;line-height: 1.1;"><b>Scoring: </b>  </p>
-                  <p style="color: white; font-size: 20px; text-align: justify; padding-left: 50px;line-height: 1.1;"> Track and analyze game scores in real-time, 
-                    providing detailed statistics and performance metrics for teams and individual athletes.</p>
-                </div>
-              </div>  
-              
-<!--Coach Management-->
-
-              <div class="row">
-                <div class="col-sm-5" style=" padding-top: 40px"><img src="../../images/homepage/coachmng.png" class="img-responsive;" style="max-width: 100%; height: auto;">
-                </div>
-
-                <div class="col-sm-7">
-                  <p style="color: white;font-family: Arial, Helvetica, sans-serif; font-size: 24pt; padding-top: 20px; padding-left: 50px;line-height: 1.1;"><b>Coach Management: </b>  </p>
-                  <p style="color: white; font-size: 20px; text-align: justify; padding-left: 50px;line-height: 1.1;"> Efficiently manage coaching staff, including scheduling, performance tracking,
-                     and communication tools to enhance team coordination and development.</p>
-                </div>
-              </div>
-
-<!--Team-->
-
-              <div class="row">
-                <div class="col-sm-5" style=" padding-top: 40px"><img src="../../images/homepage/team.png" class="img-responsive;" style="max-width: 100%; height: auto;">
-                </div>
-
-                <div class="col-sm-7">
-                  <p style="color: white;font-family: Arial, Helvetica, sans-serif; font-size: 24pt; padding-top: 20px; padding-left: 50px;line-height: 1.1;"><b>Team and Athlete Data:</b>  </p>
-                  <p style="color: white; font-size: 20px; text-align: justify; padding-left: 50px;line-height: 1.1;"> Maintain detailed profiles for teams and athletes, including personal information, performance stats,
-                     training schedules, and medical records, ensuring all necessary data is easily accessible.</p>
-                </div>
-
-
-              </div>
-
-            </div>  
-            
-            
-                
-                <div class = "col-sm-6" style="padding-left: 85px; padding-top: 250px;">
-                  <img src="../../images/homepage/bolz.png" class="img-responsive;" style="max-width: 100%; height: auto;"></div>
-                
-
-              </div>
-            
-              
-          </div>
-
         </div>
+
+        <div class="col-sm-6" style="padding-left: 90px;">
+            <b><p style="color: white; font-size: 40pt;">CONTACT US!</p></b>
+
+            <div>
+                <p style="color: white; font-size: 20px; line-height: 40px; padding-top: 20px;">
+                    <i class="fa-regular fa-envelope" style="color: white; font-size: 40px; vertical-align: middle;"></i>
+                    <span style="margin-left: 20px;">sportsmanagemerpro@email.com</span>
+                </p>
+            </div>
+            <div>
+                <p style="color: white; font-size: 20px; line-height: 40px; padding-top: 20px;">
+                    <i class="fa-solid fa-mobile-screen-button" style="color: white; font-size: 40px; vertical-align: middle;"></i>
+                    <span style="margin-left: 30px;">+639123456789</span>
+                </p>
+            </div>
+            <div>
+                <p style="color: white; font-size: 20px; line-height: 40px; padding-top: 20px;">
+                    <i class="fa-solid fa-location-dot" style="color: white; font-size: 40px; vertical-align: middle;"></i>
+                    <span style="margin-left: 30px;">Cavite Civic Center, Palico IV, Imus City, Cavite</span>
+                </p>
+            </div>
+            <div>
+                <p style="color: white; font-size: 20px; line-height: 40px; padding-top: 40px;">
+                    Suggestions & Recommendations:
+                </p>
+            </div>
+            <!-- Add Button here -->
+            <div>
+                <button type="button" id="openFeedBack" class="btn btn-primary btn-lg mt-3">Submit Your Feedback</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="padding-top:40px;"> 
+    <p style="text-align:center; font-size:28pt;font-weight:bold;"> MEET YOUR DEVELOPERS </p>
+    <div class="row" style="padding-top:40px;margin:40px;">
+    
+        <div class="col-sm-4 d-flex justify-content-center align-items-center"><img src="../../images/profile/Jed.png" alt="Profile Picture" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; padding">
+        <p style="color: white; font-size: 20px; line-height: 40px; padding-top: 20px; padding-left:30px"> Jed Mirasol <br><i class="fa-solid fa-envelope"></i> joseph@email.com </p> </div>
+        
+        <div class="col-sm-4 d-flex justify-content-center align-items-center"><img src="../../images/profile/Paul.png" alt="Profile Picture" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; padding">
+        <p style="color: white; font-size: 20px; line-height: 40px; padding-top: 20px; padding-left:30px"> Paul Justin Dela Cuesta <br><i class="fa-solid fa-envelope"></i> paul@email.com </p> </div>
+
+        <div class="col-sm-4 d-flex justify-content-center align-items-center"><img src="../../images/profile/Renz.png" alt="Profile Picture" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; padding">
+        <p style="color: white; font-size: 20px; line-height: 40px; padding-top: 20px; padding-left:30px"> Renz Pambuena <br><i class="fa-solid fa-envelope"></i> renz@email.com</p> </div>
+
+        
+    
+    </div>
+    <div class="row" style="padding-top:40px;margin:40px;">
+    <div class="col-sm-4 d-flex justify-content-center align-items-center"><img src="../../images/profile/Miko.png" alt="Profile Picture" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; padding">
+        <p style="color: white; font-size: 20px; line-height: 40px; padding-top: 20px; padding-left:30px"> Michael Davenfort <br><i class="fa-solid fa-envelope"></i> miko@email.com </p> </div>
+        
+        <div class="col-sm-4 d-flex justify-content-center align-items-center"><img src="../../images/profile/Chriz.png" alt="Profile Picture" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; padding">
+        <p style="color: white; font-size: 20px; line-height: 40px; padding-top: 20px; padding-left:30px"> Christoff Jaen Reyes <br><i class="fa-solid fa-envelope"></i> christoff@email.com </p> </div>
+
+        <div class="col-sm-4 d-flex justify-content-center align-items-center"><img src="../../images/profile/Nats.png" alt="Profile Picture" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; padding">
+        <p style="color: white; font-size: 20px; line-height: 40px; padding-top: 20px; padding-left:30px"> Nathaniel Relox <br><i class="fa-solid fa-envelope"></i> nats@email.com </p> </div>
+    </div>   
+</div> 
     </div>
 
     <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
@@ -318,7 +338,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" title="Change Profile Photo" class="btn btn-success" id="updatePhoto">Change Profile Picture</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
             </div>
         </div>
@@ -361,36 +381,41 @@
 
     // JS for the Side Bar ------------------------------------------------------
 
-        let navOpen = false;
+    let navOpen = false;
 
-        function toggleNav() {
-            if (navOpen) {
-                closeNav();
-            } else {
-                openNav();
-            }
-            navOpen = !navOpen;
-        }
+function toggleNav() {
+    if (navOpen) {
+        closeNav();
+    } else {
+        openNav();
+    }
+    navOpen = !navOpen;
+}
 
-        function openNav() {
-            document.getElementById("mySidebar").style.width = "250px";
-            document.getElementById("mySidebar").style.left = "0";
-        }
+function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("mySidebar").style.left = "0";
+    document.querySelector('.teamManager').style.overflowY = 'auto'; // Show overflow
+    
+}
 
-        function closeNav() {
-            document.getElementById("mySidebar").style.width = "80px";
-        }
+function closeNav() {
+    document.getElementById("mySidebar").style.width = "80px";
+    document.querySelector('.teamManager').style.overflow = 'hidden'; // Hide overflow
+    
+}
 
         $(document).ready(function() {
+            closeNav();
             $.ajax({
                 type: "GET",
                 url: "../onloadFunction/getLoggedIn.php",
                 dataType: 'json',
                 success: function(response) {
                     if (response.status === 'success') {
-                        $('#userName').text(response.loggedInUserData.admin_email);
-                        $('#userPosition').text("ADMIN");
-                        $('#profileImage').attr('src', '../../images/profile/' + response.loggedInUserData.admin_img);
+                        $('#userName').text(response.loggedInUserData.coach_lname);
+                        $('#userPosition').text("COACH");
+                        $('#profileImage').attr('src', '../../images/profile/' + response.loggedInUserData.coach_img);
                     } else {
                         alert(response.message);
                         window.location.href = '../../index.php';
