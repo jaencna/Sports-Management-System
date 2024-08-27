@@ -467,28 +467,30 @@ function getQuarterSelect() {
         
 
 
-    $(document).on('focusout', 'input[type="number"]', function () {
+        $(document).on('focusout', 'input[type="number"]', function () {
+            let $row = $(this).closest('tr');  // Get the current row
         
-            let foul = $('#field-foul').val();
+            let foul = $row.find('input[data-column="ath_foul"]').val();
             let inputValue = $(this).val();
             let column = $(this).data('column');
             let athNum = $(this).data('id');
             let athTeam = $(this).data('team');
             let matchId = selectedMatchIds[0];
             let quarter = $('#quarterSelect').val();
-
-    
-            // Calculate updated values based on column modified
-            let ath2fgm = parseFloat($('input[data-column="ath_2fgm"]').val()) || 0;
-            let ath3fgm = parseFloat($('input[data-column="ath_3fgm"]').val()) || 0;
-            let ath_ftm = parseFloat($('input[data-column="ath_ftm"]').val()) || 0;
-    
+        
+            // Calculate updated values based on the specific row modified
+            let ath2fgm = parseFloat($row.find('input[data-column="ath_2fgm"]').val()) || 0;
+            let ath3fgm = parseFloat($row.find('input[data-column="ath_3fgm"]').val()) || 0;
+            let ath_ftm = parseFloat($row.find('input[data-column="ath_ftm"]').val()) || 0;
+        
             let ath2pts = ath2fgm * 2;
             let ath3pts = ath3fgm * 3;
             let ath_ftpts = ath_ftm;
-    
+        
             let ath_pts = ath2pts + ath3pts + ath_ftpts;
-    
+        
+            console.log(ath2fgm, ath3fgm, ath_ftm, athNum);
+        
             // Prepare data for AJAX request
             let data = {
                 match_id: matchId,
@@ -502,59 +504,45 @@ function getQuarterSelect() {
                 ath_3pts: ath3pts,
                 ath_ftm: ath_ftm,
                 ath_ftpts: ath_ftpts,
-                ath_2fga: parseFloat($('input[data-column="ath_2fga"]').val()) || 0,
-                ath_3fga: parseFloat($('input[data-column="ath_3fga"]').val()) || 0,
-                ath_fta: parseFloat($('input[data-column="ath_fta"]').val()) || 0,
-                ath_ass: parseFloat($('input[data-column="ath_ass"]').val()) || 0,
-                ath_block: parseFloat($('input[data-column="ath_block"]').val()) || 0,
-                ath_steal: parseFloat($('input[data-column="ath_steal"]').val()) || 0,
-                ath_ofreb: parseFloat($('input[data-column="ath_ofreb"]').val()) || 0,
-                ath_defreb: parseFloat($('input[data-column="ath_defreb"]').val()) || 0,
-                ath_turn: parseFloat($('input[data-column="ath_turn"]').val()) || 0,
-                ath_foul: parseFloat($('input[data-column="ath_foul"]').val()) || 0
+                ath_2fga: parseFloat($row.find('input[data-column="ath_2fga"]').val()) || 0,
+                ath_3fga: parseFloat($row.find('input[data-column="ath_3fga"]').val()) || 0,
+                ath_fta: parseFloat($row.find('input[data-column="ath_fta"]').val()) || 0,
+                ath_ass: parseFloat($row.find('input[data-column="ath_ass"]').val()) || 0,
+                ath_block: parseFloat($row.find('input[data-column="ath_block"]').val()) || 0,
+                ath_steal: parseFloat($row.find('input[data-column="ath_steal"]').val()) || 0,
+                ath_ofreb: parseFloat($row.find('input[data-column="ath_ofreb"]').val()) || 0,
+                ath_defreb: parseFloat($row.find('input[data-column="ath_defreb"]').val()) || 0,
+                ath_turn: parseFloat($row.find('input[data-column="ath_turn"]').val()) || 0,
+                ath_foul: parseFloat($row.find('input[data-column="ath_foul"]').val()) || 0
             };
-            if (foul > 6) {
-                alert("Fouls Max is 6")
-            } else {
-                console.log("safe");
+        
             // Send AJAX request to update athlete stats
             $.ajax({
-                url: '../buttonFunction/updateAthleteStats.php', // Path to your PHsP file
+                url: '../buttonFunction/updateAthleteStats.php',
                 type: 'POST',
                 data: data,
                 success: function(response) {
                     console.log('Athlete stats updated successfully');
-                    
-                        fetchAggregatedData();
-                        fetchGameTrackingData(athTeam);
-                    
-
-    // Set a timeout for updateBballGameTotal to ensure it runs after fetchAggregatedData completes
+                    fetchGameTrackingData(athTeam);
+                    fetchAggregatedData();
+        
+                    // Ensure subsequent updates occur in sequence
                     setTimeout(function() {
-
-                        // Set another timeout for getMatchTotal to run after updateBballGameTotal
                         setTimeout(function() {
                             getMatchTotal();
-
-                            // Final timeout to getQuarterSelect after getMatchTotal
                             setTimeout(function() {
                                 getQuarterSelect();
-
                                 fetchMatchData();
-                            }, 300); // Adjust this delay as needed
-
-                        }, 300); // Adjust this delay as needed
-
-                    }, 300); // Adjust this delay as needed
-                    
+                            }, 300);
+                        }, 300);
+                    }, 300);
                 },
                 error: function(xhr, status, error) {
                     console.error('Error updating athlete stats:', error);
                 }
             });
-        }
-    });
-
+     });
+        
 
     function getFormattedDateTime() {
         let now = new Date();
