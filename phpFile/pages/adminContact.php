@@ -5,7 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>Contact</title>
+    <link rel="icon" href="../../images/homepage/running1.png" type="image/png">
 
     <!-- BS LINKS -->
     <!-- <link rel="stylesheet" href="../../bsCSS/bootstrap.css">
@@ -305,26 +306,26 @@
     <p style="text-align:center; font-size:28pt;font-weight:bold;"> MEET YOUR DEVELOPERS </p>
     <div class="row" style="padding-top:40px;margin:40px;">
     
-        <div class="col-sm-4 d-flex justify-content-center align-items-center"><img src="../../images/profile/Jed.png" alt="Profile Picture" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; padding">
+        <div class="col-sm-4 d-flex justify-content-center align-items-center"><img src="../../images/profile/Jed.png" alt="Profile Picture" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; ">
         <p style="color: white; font-size: 20px; line-height: 40px; padding-top: 20px; padding-left:30px"> Jed Mirasol <br><i class="fa-solid fa-envelope"></i> joseph@email.com </p> </div>
         
-        <div class="col-sm-4 d-flex justify-content-center align-items-center"><img src="../../images/profile/Paul.png" alt="Profile Picture" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; padding">
+        <div class="col-sm-4 d-flex justify-content-center align-items-center"><img src="../../images/profile/Paul.png" alt="Profile Picture" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; ">
         <p style="color: white; font-size: 20px; line-height: 40px; padding-top: 20px; padding-left:30px"> Paul Justin Dela Cuesta <br><i class="fa-solid fa-envelope"></i> paul@email.com </p> </div>
 
-        <div class="col-sm-4 d-flex justify-content-center align-items-center"><img src="../../images/profile/Renz.png" alt="Profile Picture" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; padding">
+        <div class="col-sm-4 d-flex justify-content-center align-items-center"><img src="../../images/profile/Renz.png" alt="Profile Picture" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; ">
         <p style="color: white; font-size: 20px; line-height: 40px; padding-top: 20px; padding-left:30px"> Renz Pambuena <br><i class="fa-solid fa-envelope"></i> renz@email.com</p> </div>
 
         
     
     </div>
     <div class="row" style="padding-top:40px;margin:40px;">
-    <div class="col-sm-4 d-flex justify-content-center align-items-center"><img src="../../images/profile/Miko.png" alt="Profile Picture" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; padding">
+    <div class="col-sm-4 d-flex justify-content-center align-items-center"><img src="../../images/profile/Miko.png" alt="Profile Picture" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; ">
         <p style="color: white; font-size: 20px; line-height: 40px; padding-top: 20px; padding-left:30px"> Michael Davenfort <br><i class="fa-solid fa-envelope"></i> miko@email.com </p> </div>
         
-        <div class="col-sm-4 d-flex justify-content-center align-items-center"><img src="../../images/profile/Chriz.png" alt="Profile Picture" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; padding">
+        <div class="col-sm-4 d-flex justify-content-center align-items-center"><img src="../../images/profile/Chriz.png" alt="Profile Picture" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; ">
         <p style="color: white; font-size: 20px; line-height: 40px; padding-top: 20px; padding-left:30px"> Christoff Jaen Reyes <br><i class="fa-solid fa-envelope"></i> christoff@email.com </p> </div>
 
-        <div class="col-sm-4 d-flex justify-content-center align-items-center"><img src="../../images/profile/Nats.png" alt="Profile Picture" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; padding">
+        <div class="col-sm-4 d-flex justify-content-center align-items-center"><img src="../../images/profile/Nats.png" alt="Profile Picture" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; ">
         <p style="color: white; font-size: 20px; line-height: 40px; padding-top: 20px; padding-left:30px"> Nathaniel Relox <br><i class="fa-solid fa-envelope"></i> nats@email.com </p> </div>
     </div>   
 </div> 

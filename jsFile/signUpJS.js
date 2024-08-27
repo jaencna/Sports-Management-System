@@ -66,9 +66,7 @@ function validateSignUp(){
 function validateEmailDomain(email) {
     // List of allowed email domains
     const allowedDomains = [
-        'gmail.com', 'yahoo.com', 'outlook.com', 'icloud.com', 'protonmail.com',
-        'zoho.com', 'aol.com', 'yandex.com', 'gmx.com', 'mail.com',
-        'tutanota.com', 'fastmail.com', 'hushmail.com', 'cvsu.edu.ph'
+        'cvsu.edu.ph'
     ];
 
     // Extract the domain from the email
@@ -217,7 +215,10 @@ $(document).ready(function() {
         // Validate email
         if (athEmail === '' || !validateEmailDomain(athEmail)) {
             $('#athEmail').addClass('is-invalid');
-            isValid = false;
+            setTimeout(function() {
+                alert("Invalid Email Domain!")
+                isValid = false;
+            }, 100);
         } else {
             $('#athEmail').removeClass('is-invalid');
         }

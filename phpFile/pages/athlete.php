@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../images/homepage/running1.png" type="image/png">
+
+
     <title>Home Page</title>
 
     <!-- BS LINKS -->
@@ -13,6 +16,7 @@
 
     <!-- Font Awesome Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
 
     <!-- Page CSS and JS -->
     <link rel="stylesheet" href="../../cssFile/createMatchBballCSS.css">
@@ -188,6 +192,30 @@
             color:gray;
             
         }
+
+        #athleteNotification {
+            position: relative;
+        }
+
+        #athleteNotification .badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            width: 24px; /* Adjust the width as needed */
+            height: 24px; /* Adjust the height as needed */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px; /* Adjust font size as needed */
+            z-index: 10000;
+        }
+
+
+
+        
     </style>
 
     
@@ -215,7 +243,11 @@
         <hr style="width: 100vh; font-weight:bold;">
         <div class="teamManager" style="height: 33vh;">
             <a href="athleteHistory.php" class="loading-link" title="Manage Team"><i class="fa-solid fa-people-group"></i>History</a>
-            <a href="athleteNotification.php" class="loading-link"><i class="fa-solid fa-bell"></i>Notifications</a>   
+            <a href="athleteNotification.php" id="athleteNotification" class="loading-link">
+                <i class="fa-solid fa-bell"></i>Notifications
+                <span class="badge">3</span> <!-- Badge element -->
+            </a>
+ 
             <!-- <a href="" class="loading-link"><i class="fa-solid fa-ranking-star"></i>Rankings</a>               -->
         </div>
        <hr style="width: 100vh; font-weight:bold;">
@@ -475,6 +507,28 @@ function closeNav() {
                 document.getElementById('modalImage').src = imgSrc;
                 $('#imageModal').modal('show');
             });
+
+            function updateRequestCount() {
+                $.ajax({
+                    url: '../onloadFunction/countNotification.php', // Update with the correct path
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function(data) {
+                        $('#athleteNotification .badge').remove(); // Remove existing badge if any
+                        
+                        if (data.count > 0) {
+                            $('#athleteNotification').append(`<span class="badge">${data.count}</span>`);
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("Error fetching request count: ", error);
+                    }
+                });
+            }
+
+            // Call the function to update the notification count
+            updateRequestCount();
+
         });
     </script>
 </body>
