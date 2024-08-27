@@ -519,7 +519,7 @@ function getQuarterSelect() {
                 console.log("safe");
             // Send AJAX request to update athlete stats
             $.ajax({
-                url: '../buttonFunction/updateAthleteStats.php', // Path to your PHP file
+                url: '../buttonFunction/updateAthleteStats.php', // Path to your PHsP file
                 type: 'POST',
                 data: data,
                 success: function(response) {
