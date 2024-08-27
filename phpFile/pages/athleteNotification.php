@@ -217,7 +217,40 @@
         .table tbody tr:last-child td:last-child {
             border-bottom-right-radius: 20px; /* Rounded bottom-right corner of the last cell in the last row */
         }
+        .card {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 15px;
+        transition: transform 0.2s;
+    }
 
+    .card:hover {
+        transform: scale(1.05);
+    }
+
+    .card-title {
+        font-family: 'Georgia', serif;
+        font-weight: bold;
+        color: darkslategray;
+    }
+
+    .card-body {
+        background-color: #f8f9fa;
+        padding: 20px;
+    }
+
+    .card-img-top {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+    .btn-primary {
+        background-color: darkslategray;
+        border: none;
+    }
+
+    .btn-primary:hover {
+        background-color: #555;
+    }
     </style>
 
     
@@ -244,8 +277,8 @@
         <a href="athlete.php" class="loading-link" title="Home Page"><i class="fa-solid fa-house"></i>Home</a>
         <hr style="width: 100vh; font-weight:bold;">
         <div class="teamManager" style="height: 33vh;">
-            <a href="athleteHistory.php" class="loading-link" title="Manage Team"><i class="fa-solid fa-people-group active"></i>History</a>
-            <a href="athleteNotification.php" class="loading-link"><i class="fa-solid fa-bell"></i>Notifications</a>   
+            <a href="athleteHistory.php" class="loading-link" title="Manage Team"><i class="fa-solid fa-people-group"></i>History</a>
+            <a href="athleteNotification.php" class="loading-link"><i class="fa-solid fa-bell active"></i>Notifications</a>   
             <a href="" class="loading-link"><i class="fa-solid fa-ranking-star"></i>Rankings</a>              
         </div>
        <hr style="width: 100vh; font-weight:bold;">
@@ -255,65 +288,52 @@
     </div>
 
     <div id="main" style="background-color: black; height: 2419px; background-image: url('../../images/homepage/TERRAFORM.png');background-size: cover; background-position: center; height: 100vh; background-repeat: no-repeat;overflow-x: hidden;">
-    <div class="container">
-    <h3 class="text-center mb-4 p-3 bg-white text-dark" style="border-radius:15px;font-weight:bold;">Match History</h3>
-    <table class="table table-bordered">
-    <thead>
-        <tr class="mb-4">
-            <th>Match Name</th>
-            <th>Total Points</th>
-            <th>2 Points</th>
-            <th>3 Points</th>
-            <th>Free Throw</th>
-            <th>FT Attempt</th>
-            <th>Block</th>
-            <th>Steal</th>
-            <th>Foul</th>
-        </tr>
-    </thead>
-    <tbody id="statsTableBody">
-        <!-- Data will be inserted here by JavaScript -->
-    </tbody>
-</table>
-
+    <div class="container mt-4">
+    <div class="row" id="notification-container">
+        <!-- Notifications will be dynamically inserted here -->
     </div>
+</div>
 
-    <script>
-document.addEventListener("DOMContentLoaded", function() {
-    fetch('../onloadFunction/getTracking.php')
-        .then(response => response.json())
-        .then(data => {
-            if (data.status === 'success') {
-                const stats = data.gameStats;
-                const tableBody = document.getElementById('statsTableBody');
-
-                // Clear any existing rows
-                tableBody.innerHTML = '';
-
-                // Iterate over each stat entry and create a table row
-                stats.forEach(stat => {
-                    const row = document.createElement('tr');
-                    row.innerHTML = `
-                        <td>${stat.match_name || 'N/A'}</td>
-                        <td>${stat.total_pts || 0}</td>
-                        <td>${stat.total_2pts || 0}</td>
-                        <td>${stat.total_3pts || 0}</td>
-                        <td>${stat.total_ftpts || 0}</td>
-                        <td>${stat.total_fta || 0}</td>
-                        <td>${stat.total_blocks || 0}</td>
-                        <td>${stat.total_steals || 0}</td>
-                        <td>${stat.total_fouls || 0}</td>
-                    `;
-                    tableBody.appendChild(row);
-                });
-            } else {
-                console.error(data.message);
-            }
-        })
-        .catch(error => console.error('Error fetching data:', error));
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Fetch notifications when the page loads
+    fetchNotifications();
 });
 
-    </script>
+function fetchNotifications() {
+    fetch('../onloadFunction/getNotification.php')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data); // Add this to log the JSON response
+            if (data.status === 'success') {
+                const notificationContainer = document.getElementById('notification-container');
+                notificationContainer.innerHTML = ''; // Clear any existing content
+
+                data.notifications.forEach(notification => {
+                    const notificationCard = `
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img src="your-image.jpg" class="card-img-top" alt="Match Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">${notification.match_name}</h5>
+                                    <p class="card-text"><strong>Date & Time:</strong> ${notification.match_date_time}</p>
+                                    <p class="card-text"><strong>Team:</strong> ${notification.match_team}</p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    notificationContainer.insertAdjacentHTML('beforeend', notificationCard);
+                });
+            } else {
+                console.error('Error fetching notifications:', data.message);
+            }
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+</script>
+
+
 
     
 

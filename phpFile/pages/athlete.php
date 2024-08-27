@@ -215,6 +215,7 @@
         <hr style="width: 100vh; font-weight:bold;">
         <div class="teamManager" style="height: 33vh;">
             <a href="athleteHistory.php" class="loading-link" title="Manage Team"><i class="fa-solid fa-people-group"></i>History</a>
+            <a href="athleteNotification.php" class="loading-link"><i class="fa-solid fa-bell"></i>Notifications</a>   
             <a href="" class="loading-link"><i class="fa-solid fa-ranking-star"></i>Rankings</a>              
         </div>
        <hr style="width: 100vh; font-weight:bold;">
