@@ -82,7 +82,7 @@ body {
 }
 
 .selected-athlete-item {
-    background-color: #f0f0f0; /* Light gray background */
+
     padding: 5px; /* Optional padding for better appearance */
     border-radius: 3px; /* Optional rounded corners */
     margin-bottom: 2px; /* Optional margin for spacing */
