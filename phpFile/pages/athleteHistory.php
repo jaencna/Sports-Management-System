@@ -245,9 +245,6 @@
         <hr style="width: 100vh; font-weight:bold;">
         <div class="teamManager" style="height: 33vh;">
             <a href="athleteHistory.php" class="loading-link" title="Manage Team"><i class="fa-solid fa-people-group active"></i>History</a>
-            <a href="managePlayerBball.php" class="loading-link"><i class="fa-solid fa-users"></i></i>Manage Players</a>
-            <a href="createMatchBball.php" class="loading-link"><i class="fa-solid fa-basketball"></i>Create Match</a>  
-            <a href="" class="loading-link"><i class="fa-solid fa-table-columns"></i></i>Manage Match</a>
             <a href="" class="loading-link"><i class="fa-solid fa-ranking-star"></i>Rankings</a>              
         </div>
        <hr style="width: 100vh; font-weight:bold;">
