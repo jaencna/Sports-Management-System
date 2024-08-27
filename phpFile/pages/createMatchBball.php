@@ -218,7 +218,8 @@
             <a href="managePlayerBball.php" class="loading-link"><i class="fa-solid fa-users"></i></i>Manage Players</a>
             <a href="createMatchBball.php" class="loading-link"><i class="fa-solid fa-basketball active"></i>Create Match</a>  
             <a href="manageMatch.php" class="loading-link"><i class="fa-solid fa-table-columns"></i></i>Manage Match</a>
-            <a href="rangking.php" class="loading-link"><i class="fa-solid fa-ranking-star"></i>Rankings</a>              
+            <a href="matchResultBball.php" class="loading-link"><i class="fa-solid fa-clipboard-list"></i>Match Result</a> 
+            <a href="rangking.php" class="loading-link"><i class="fa-solid fa-ranking-star"></i>Rankings</a>            
         </div>
        <hr style="width: 100vh; font-weight:bold;">
         <a href="contacts.php" class="loading-link"><i class="fas fa-envelope mr-2"></i>Contact</a>
@@ -237,7 +238,7 @@
             </select>
             
             </div>
-            <div class="col-sm-2" ><button id="createMatchOpenModal" type="button" class="btn btn-sucess" style=":box-shadow: 0 2px 5px rgba(2, 2, 2, 1);">Create Match</button></div>
+            <div class="col-sm-2" ><button id="createMatchOpenModal" type="button" class="btn btn-sucess" style="box-shadow: 0 2px 5px rgba(2, 2, 2, 1);">Create Match</button></div>
             
         </div>
         
