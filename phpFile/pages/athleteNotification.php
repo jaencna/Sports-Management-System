@@ -219,8 +219,10 @@
         }
         .card {
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        border-radius: 15px;
+      
         transition: transform 0.2s;
+        
+        
     }
 
     .card:hover {
@@ -239,8 +241,7 @@
     }
 
     .card-img-top {
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
+        
     }
 
     .btn-primary {
@@ -250,6 +251,15 @@
 
     .btn-primary:hover {
         background-color: #555;
+    }
+
+    .hehe {
+        padding: 10px;
+    
+    }
+
+    #notification-container {
+        border-radius: 20px;
     }
     </style>
 
@@ -311,9 +321,9 @@ function fetchNotifications() {
 
                 data.notifications.forEach(notification => {
                     const notificationCard = `
-                        <div class="col-md-4 mb-4">
+                        <div class="col-md-12 mb-12 hehe">
                             <div class="card">
-                                <img src="your-image.jpg" class="card-img-top" alt="Match Image">
+                                
                                 <div class="card-body">
                                     <h5 class="card-title">${notification.match_name}</h5>
                                     <p class="card-text"><strong>Date & Time:</strong> ${notification.match_date_time}</p>
