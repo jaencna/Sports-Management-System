@@ -1,0 +1,38 @@
+.title {
+    background-color: white;
+    height: 10%;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    text-align: center;
+    align-items: center;
+}
+
+.title-main {
+    background-color: white;
+    height: 10%;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    
+}
+
+.resultShow {
+    background-color: white;
+    height: 90%;
+    width: 100%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.resultHere {
+    padding: 20px;
+}
+
+#resultOutside{
+    height: 100%;
+    width: 100%;
+    background-color: lightgray;
+    padding: 20px;
+}
+

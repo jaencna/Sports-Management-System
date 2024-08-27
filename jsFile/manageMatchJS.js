@@ -575,29 +575,36 @@ function getQuarterSelect() {
             let matchId = selectedMatchIds[0];
             let team1Score = data.team_1_score;
             let team2Score = data.team_2_score;
+
+
             let dateTime = getFormattedDateTime();
             
             console.log(team1Score, team2Score, dateTime);
+
+            if(team1Score === team2Score) {
+                alert("Scores Cannot be Tied!")
+            } else {
     
-            $.ajax({
-                url: '../buttonFunction/finalizedButton.php', // Path to your PHP file
-                type: 'POST',
-                data: {
-                    team1Score: team1Score,
-                    team2Score: team2Score,
-                    dateTime: dateTime,
-                    matchId: matchId // Pass matchId to the PHP script
-                },
-                success: function(response) {
-                    // Handle the success response
-                    console.log('Success:', response);
-                    alert(response);
-                    location.reload();
-                },
-                error: function(xhr, status, error) {
-                    console.error('Error updating match results:', error);
-                }
-            });
+                $.ajax({
+                    url: '../buttonFunction/finalizedButton.php', // Path to your PHP file
+                    type: 'POST',
+                    data: {
+                        team1Score: team1Score,
+                        team2Score: team2Score,
+                        dateTime: dateTime,
+                        matchId: matchId // Pass matchId to the PHP script
+                    },
+                    success: function(response) {
+                        // Handle the success response
+                        console.log('Success:', response);
+                        alert(response);
+                        location.reload();
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Error updating match results:', error);
+                    }
+                });
+            }
         } else {
             console.error('Unexpected data format:', data);
         }

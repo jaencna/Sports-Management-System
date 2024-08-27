@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
     <!-- Page CSS and JS -->
-    <link rel="stylesheet" href="../../cssFile/createMatchBballCSS.css">
+    <link rel="stylesheet" href="../../cssFile/matchResultBballCSS.css">
 
     <style>
         * {
@@ -230,6 +230,19 @@
     <!-- Improved HTML Structure -->
     <div id="main" style="padding:50px;">
         
+        <div class="title row">
+            <div class="col-md-12 title-name">
+                <h1>MATCH RESULTS</h1>
+            </div>
+        </div>
+        <div class="resultShow row">
+            <div class="col-md-12 resultHere">
+                <div id="resultOutside">
+
+                </div>
+            </div>
+        </div>
+        
     </div>
 
 <!--shit -->
@@ -253,7 +266,7 @@
     <!-- AJAX link -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="../../jsFile/createMatchBballJS.js"></script>
+    <script src="../../jsFile/matchResultBballJS.js"></script>
     <script>
     // JS for the loading page
     function showLoadingScreen() {
