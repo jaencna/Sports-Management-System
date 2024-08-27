@@ -241,17 +241,16 @@
         </div>
 
         
-        <a href="athlete.php" class="loading-link" title="Home Page"><i class="fa-solid fa-house"></i>Home</a>
+        <a href="athlete.php" class="loading-link" title="Home Page"><i class="fa-solid fa-house "></i>Home</a>
         <hr style="width: 100vh; font-weight:bold;">
         <div class="teamManager" style="height: 33vh;">
             <a href="athleteHistory.php" class="loading-link" title="Manage Team"><i class="fa-solid fa-people-group active"></i>History</a>
             <a href="athleteNotification.php" class="loading-link"><i class="fa-solid fa-bell"></i>Notifications</a>   
-            <a href="" class="loading-link"><i class="fa-solid fa-ranking-star"></i>Rankings</a>              
+            <!-- <a href="" class="loading-link"><i class="fa-solid fa-ranking-star"></i>Rankings</a>               -->
         </div>
        <hr style="width: 100vh; font-weight:bold;">
-        <a href="contacts.php" class="loading-link"><i class="fas fa-envelope mr-2"></i>Contact</a>
+        <a href="athleteContacts.php" class="loading-link"><i class="fas fa-envelope mr-2"></i>Contact</a>
         <a href="../buttonFunction/logOutButton.php" class="loading-link"><i class="fa-solid fa-right-from-bracket"></i>Log Out</a>
-
     </div>
 
     <div id="main" style="background-color: black; height: 2419px; background-image: url('../../images/homepage/TERRAFORM.png');background-size: cover; background-position: center; height: 100vh; background-repeat: no-repeat;overflow-x: hidden;">

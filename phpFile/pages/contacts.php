@@ -230,18 +230,18 @@
         </div>
 
         
-        <a href="coaching.php" class="loading-link" title="Home Page"><i class="fa-solid fa-house active"></i>Home</a>
+        <a href="coaching.php" class="loading-link" title="Home Page"><i class="fa-solid fa-house"></i>Home</a>
         <hr style="width: 100vh; font-weight:bold;">
         <div class="teamManager" style="height: 33vh;">
-            <a href="manageTeam.php" class="loading-link" title="Manage Team"><i class="fa-solid fa-people-group"></i>Manage Team</a>
-            <a href="managePlayerBball.php" class="loading-link"><i class="fa-solid fa-users"></i></i>Manage Players</a>
+
+            <a href="managePlayerBball.php" class="loading-link"><i class="fa-solid fa-users"></i></i>Manage Player</a>
             <a href="createMatchBball.php" class="loading-link"><i class="fa-solid fa-basketball"></i>Create Match</a>  
-            <a href="rangking.php" class="loading-link"><i class="fa-solid fa-ranking-star"></i>Rankings</a>
-            <a href="rangking.php" class="loading-link"><i class="fa-solid fa-ranking-star"></i>Rankings</a>
-            <a href="rangking.php" class="loading-link"><i class="fa-solid fa-ranking-star"></i>Rankings</a>              
+            <a href="manageMatch.php" class="loading-link"><i class="fa-solid fa-table-columns"></i></i>Manage Match</a>
+            <a href="matchResultBball.php" class="loading-link"><i class="fa-solid fa-clipboard-list"></i>Match Result</a> 
+         
         </div>
        <hr style="width: 100vh; font-weight:bold;">
-        <a href="#" class="loading-link"><i class="fas fa-envelope mr-2"></i>Contact</a>
+        <a href="contacts.php" class="loading-link"><i class="fas fa-envelope mr-2 active"></i>Contact</a>
         <a href="../buttonFunction/logOutButton.php" class="loading-link"><i class="fa-solid fa-right-from-bracket"></i>Log Out</a>
 
     </div>

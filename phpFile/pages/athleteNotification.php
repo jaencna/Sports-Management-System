@@ -240,9 +240,6 @@
         padding: 20px;
     }
 
-    .card-img-top {
-        
-    }
 
     .btn-primary {
         background-color: darkslategray;
@@ -284,16 +281,17 @@
         </div>
 
         
-        <a href="athlete.php" class="loading-link" title="Home Page"><i class="fa-solid fa-house"></i>Home</a>
+        <a href="athlete.php" class="loading-link" title="Home Page"><i class="fa-solid fa-house "></i>Home</a>
         <hr style="width: 100vh; font-weight:bold;">
         <div class="teamManager" style="height: 33vh;">
             <a href="athleteHistory.php" class="loading-link" title="Manage Team"><i class="fa-solid fa-people-group"></i>History</a>
             <a href="athleteNotification.php" class="loading-link"><i class="fa-solid fa-bell active"></i>Notifications</a>   
-            <a href="" class="loading-link"><i class="fa-solid fa-ranking-star"></i>Rankings</a>              
+            <!-- <a href="" class="loading-link"><i class="fa-solid fa-ranking-star"></i>Rankings</a>               -->
         </div>
        <hr style="width: 100vh; font-weight:bold;">
-        <a href="contacts.php" class="loading-link"><i class="fas fa-envelope mr-2"></i>Contact</a>
+        <a href="athleteContacts.php" class="loading-link"><i class="fas fa-envelope mr-2"></i>Contact</a>
         <a href="../buttonFunction/logOutButton.php" class="loading-link"><i class="fa-solid fa-right-from-bracket"></i>Log Out</a>
+
 
     </div>
 
