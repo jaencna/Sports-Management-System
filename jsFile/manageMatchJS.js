@@ -592,6 +592,7 @@ function getQuarterSelect() {
                     // Handle the success response
                     console.log('Success:', response);
                     alert(response);
+                    location.reload();
                 },
                 error: function(xhr, status, error) {
                     console.error('Error updating match results:', error);

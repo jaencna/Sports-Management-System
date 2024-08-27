@@ -18,7 +18,7 @@ if (isset($_POST['team1Score']) && isset($_POST['team2Score']) && isset($_POST['
               `team_2_score` = ?, 
               `match_win` = ?, 
               `match_lose` = ?, 
-              `match_date_time` = ?
+              `match_date_time` = ?,
               `STATUS` = ?  
               WHERE `bball_match_id` = ?";
     $stmt = $conn->prepare($query);
