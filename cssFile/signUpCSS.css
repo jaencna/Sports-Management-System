@@ -8,6 +8,8 @@ body {
     height: 100vh;
     font-family: arial;
 	background-image: url('../images/login/BGcross.png');
+	background-size: contain;
+	
  }
 
 .logo {

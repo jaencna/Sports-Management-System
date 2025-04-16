@@ -232,9 +232,9 @@
         
 
         <div class="row">
-            <div class="col-md-6"> <!-- Adjust the col size as needed -->
-                <div class="container-coach mt-5 ">
-                    <div class="row">
+            <div class="col-md-6" > <!-- Adjust the col size as needed -->
+                <div class="container-coach mt-5 " >
+                    <div class="row" >
                         <div class="col-md-5">
                             <h2 style="padding-left:10px" ><b>Coach Details</b></h2>
                             

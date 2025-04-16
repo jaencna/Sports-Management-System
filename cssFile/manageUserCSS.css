@@ -74,11 +74,13 @@ body {
     padding: 20px;
     background-color: rgba(187, 187, 187, 0.596);
     border-radius: 30px;
+    
     height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* This will make the buttons stick to the bottom */
     font-family: Arial, Helvetica, sans-serif;
+    
 }
 
 .fixed-buttons {
